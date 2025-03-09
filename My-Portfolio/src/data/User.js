@@ -23,72 +23,63 @@ const INFO = {
 
 	projects: [
 		{
-			title: "Project 1",
+			title: `Productivity Panda "MERN STACK" Project`,
 			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
+				"Boost productivity effortlessly. Prioritize tasks, automate workflows, get email reminders, collaborate via chatbot, and enjoy secure Google authentication. Stay organized always!",
+			logo: "ReactJS.png",
 			linkText: "View Project",
-			link: "https://github.com",
+			link: "https://github.com/kalviumcommunity/S51_Sudhan_Capstone_Productivity_Panda",
 		},
 
 		{
-			title: "Project 2",
+			title: "React Quiz App `REACT` Project",
 			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/python/python.png",
+				"Interactive Quiz App using React. Manage state, handle events, navigate with routes, calculate scores, show alerts, and display results dynamically! 🚀",
+			logo: "ReactJS.png",
 			linkText: "View Project",
-			link: "https://github.com",
+			link: "https://github.com/sudhanvelss/project-react-quiz-app-three-boilerplate",
+		},
+		{
+			title: `Simple Blog-app "REDUX" Project`,
+			description:
+				"A simple blog application built with React, Redux and Tailwind CSS featuring state management for posts their posts.",
+			logo: "Redux.png",
+			linkText: "View Project",
+			link: "https://github.com/Sudhan1112/Blog-app-using-redux",
 		},
 
 		{
-			title: "Project 3",
+			title: `Memory GAME "HTML, CSS, JS" Project`,
 			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
+				"Classic Memory Game using HTML, CSS, and JavaScript. Flip cards, match pairs, test memory skills, track scores, and enjoy interactive gameplay!",
+			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
 			linkText: "View Project",
-			link: "https://github.com",
+			link: "https://github.com/Sudhan1112/Memory-Game",
 		},
 
 		{
-			title: "Project 4",
+			title: `Connect 4 "HTML, CSS, JS" Project`,
 			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
+				"Classic Connect 4 game built with HTML, CSS, and JavaScript. Drop discs, strategize, compete, and enjoy fun two-player gameplay!",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
 			linkText: "View Project",
-			link: "https://github.com",
-		},
-
-		{
-			title: "Project 5",
-			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
-			linkText: "View Project",
-			link: "https://github.com",
+			link: "https://github.com/Sudhan1112/Connect-4",
 		},
 		{
-			title: "Project 4",
+			title: `Whac-A-Mole-Game "HTML, CSS, JS" Project`,
 			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
+				"Classic Whac-A-Mole game using HTML, CSS, and JavaScript. Click moles, score points, test reflexes, and enjoy fast-paced interactive gameplay! 🎯🎮",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
 			linkText: "View Project",
-			link: "https://github.com",
+			link: "https://github.com/Sudhan1112/Whac-A-Mole-game",
 		},
 		{
-			title: "Project 4",
+			title: `EMPLOYEE MANAGEMENT SYSTEM "CPP" Project`,
 			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
+				"Employee Management System in C++ for handling employee records, adding, updating, deleting data, and generating reports with an interactive interface.👨‍💼💻",
+			logo: "cpp.png",
 			linkText: "View Project",
-			link: "https://github.com",
-		},
-		{
-			title: "Project 4",
-			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
-			linkText: "View Project",
-			link: "https://github.com",
+			link: "https://github.com/Sudhan1112/EMPLOYEE_MANAGEMENT_SYSTEM",
 		},
 	],
 };
