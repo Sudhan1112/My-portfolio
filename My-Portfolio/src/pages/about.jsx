@@ -6,7 +6,7 @@ import Footer from "../component/common/Footer";
 import Logo from "../component/common/Logo";
 import Socials from "../component/about/social";
 
-import INFO from "../data/user";
+import INFO from "../data/User";
 import SEO from "../data/Seo";
 
 import "./styles/about.css";
@@ -109,9 +109,6 @@ const About = () => {
 								</div>
 							</div>
 						</div>
-						{/* <div className="about-socials-mobile">
-							<Socials />
-						</div> */}
 					</div>
 					<div className="page-footer">
 						<Footer />
