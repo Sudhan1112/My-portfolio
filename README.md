@@ -13,7 +13,7 @@ This profile serves as a central hub for my projects and information about me. Y
 
 ## Pages
 
-* **First Page (This Page):**
+* **First Page (This Home Page):**
     * Brief introduction about myself.
     * Links to my other online profiles (personal tags).
     * Quick overview of my projects.
