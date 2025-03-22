@@ -1,7 +1,13 @@
 **TEST STACK**
  - **Frontend:** REACT JS 
 
-First page ![image](https://github.com/user-attachments/assets/39886ec6-4ce0-48e9-9f84-cd953b1cec1b)
+Home page ![image](https://github.com/user-attachments/assets/599c79a7-9e0b-402d-9722-cafc87db18ab)
+
+About Page ![image](https://github.com/user-attachments/assets/744dc324-ddd1-463a-8076-324e17bcc8f4)
+
+Projects Page ![image](https://github.com/user-attachments/assets/326857e9-f452-4275-b372-0d75b7123f7e)
+
+Contact Page ![image](https://github.com/user-attachments/assets/301a194f-0505-4783-b131-01a157bdf6f2)
 
 ## Overview
 
