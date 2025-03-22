@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import INFO from "../../data/user";
+import INFO from "../../data/User";
 
 import "./styles/logo.css";
 
