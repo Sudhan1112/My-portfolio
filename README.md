@@ -1,4 +1,4 @@
-**TEST STACK**
+**TECH STACK**
  - **Frontend:** REACT JS 
 
 Home page ![image](https://github.com/user-attachments/assets/599c79a7-9e0b-402d-9722-cafc87db18ab)
