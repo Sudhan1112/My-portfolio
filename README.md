@@ -39,4 +39,4 @@ This profile serves as a central hub for my projects and information about me. Y
 ## Let's Connect!
 
 Feel free to explore my projects and reach out if you'd like to collaborate or connect.
-**Deployment Link:** [My Portfolio](sudhan-my-portfolio.netlify.app/)
+**Deployment Link:** [My Portfolio](https://sudhan-my-portfolio.netlify.app/)
