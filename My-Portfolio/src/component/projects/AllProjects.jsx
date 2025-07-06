@@ -18,6 +18,9 @@ const AllProjects = () => {
 						description={project.description}
 						linkText={project.linkText}
 						link={project.link}
+						techStack={project.techStack}
+						problemSolved={project.problemSolved}
+						features={project.features}
 					/>
 				</div>
 			))}
