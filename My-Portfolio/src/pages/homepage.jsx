@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faGithub,
 	faLinkedinIn,
+	faDocker,
 } from "@fortawesome/free-brands-svg-icons";
 
 import Logo from "../component/common/Logo";
@@ -191,6 +192,18 @@ const Homepage = () => {
 								title="GeeksforGeeks Profile"
 							>
 								<GeeksForGeeksIcon className="homepage-social-icon" />
+							</a>
+							<a
+								href={INFO.socials.dockerhub}
+								target="_blank"
+								rel="noreferrer"
+								className="social-link"
+								title="Docker Hub Profile"
+							>
+								<FontAwesomeIcon
+									icon={faDocker}
+									className="homepage-social-icon"
+								/>
 							</a>
 						</div>
 

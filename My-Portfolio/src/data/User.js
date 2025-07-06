@@ -9,12 +9,13 @@ const INFO = {
 	socials: {
 		linkedin: "https://www.linkedin.com/in/sudhan-s-a76b8b297/",
 		github: "https://github.com/Sudhan1112",
+		dockerhub: "https://hub.docker.com/repositories/sudhan1112",
 	},
 
 	homepage: {
-		title: "Full-Stack Web Developer & Problem Solver",
+		title: "Full-Stack Web Developer & DevOps Enthusiast",
 		description:
-			"I am a full-stack web developer skilled in React.js, HTML5, CSS3, and JavaScript for frontend and Node.js, Express.js, MongoDB, and MySQL for backend development. I specialize in building scalable, secure, and high-performance web applications with a focus on clean code, seamless user experience, and industry best practices. I enjoy solving complex problems, optimizing RESTful APIs, and managing databases efficiently. With a strong foundation in Object-Oriented Programming and Data Structures & Algorithms, I write maintainable and efficient code across the full stack. I have worked on various open-source projects, and I welcome collaboration and feedback. If you're interested, feel free to explore my work and contribute. I am always eager to learn, innovate, and grow as a developer. 🚀",
+			"I am a full-stack web developer skilled in React.js, HTML5, CSS3, and JavaScript for frontend and Node.js, Express.js, FastAPI, MongoDB, MySQL, and Redis for backend development. I specialize in building scalable, secure, and high-performance web applications with a focus on clean code, seamless user experience, and industry best practices. Recently expanding into DevOps, I have successfully implemented Docker containerization across multiple projects and integrated cloud services like Firebase. I enjoy solving complex problems, optimizing RESTful APIs, and managing databases efficiently. With a strong foundation in Object-Oriented Programming and Data Structures & Algorithms, I write maintainable and efficient code across the full stack. I have worked on various open-source projects, and I welcome collaboration and feedback. If you're interested, feel free to explore my work and contribute. I am always eager to learn, innovate, and grow as a developer.",
 	},
 
 	about: {
@@ -143,7 +144,7 @@ const INFO = {
 		{
 			title: `EMPLOYEE MANAGEMENT SYSTEM "CPP" Project`,
 			description:
-				"Employee Management System in C++ for handling employee records, adding, updating, deleting data, and generating reports with an interactive interface.👨‍💼💻",
+				"Employee Management System in C++ for handling employee records, adding, updating, deleting data, and generating reports with an interactive interface.",
 			linkText: "View Project",
 			link: "https://github.com/Sudhan1112/EMPLOYEE_MANAGEMENT_SYSTEM",
 			techStack: [

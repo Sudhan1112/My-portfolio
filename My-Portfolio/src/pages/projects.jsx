@@ -43,11 +43,11 @@ const Projects = () => {
 						</div>
 
 						<div className="subtitle projects-subtitle">
-							I have developed a variety of projects aimed at solving real-world challenges while adhering to best practices in <strong>full-stack development</strong>. Many of these projects are <strong>encouraging exploration</strong>, <strong>learning</strong>, and <strong>collaboration</strong>.
+							I have developed a variety of projects aimed at solving real-world challenges while adhering to best practices in <strong>full-stack development</strong> and <strong>DevOps practices</strong>. Many of these projects are <strong>encouraging exploration</strong>, <strong>learning</strong>, and <strong>collaboration</strong>.
 							<br />
-							By leveraging <b>React.js</b>, <b>HTML5</b>, <b>CSS3</b>, and <b>JavaScript</b> for seamless user experiences and <b>Node.js</b>, <b>Express.js</b>, <b>MongoDB</b>, and <b>MySQL</b> for building scalable, secure backend solutions, I focus on crafting efficient and maintainable applications.
+							By leveraging <b>React.js</b>, <b>HTML5</b>, <b>CSS3</b>, and <b>JavaScript</b> for seamless user experiences and <b>Node.js</b>, <b>Express.js</b>, <b>FastAPI</b>, <b>MongoDB</b>, <b>MySQL</b>, and <b>Redis</b> for building scalable, secure backend solutions, I focus on crafting efficient and maintainable applications. Additionally, I implement <b>Docker containerization</b> and <b>Firebase integration</b> to enhance deployment and scalability.
 							<br />
-							If any of my projects interest you, feel free to explore the code, share your thoughts, or contribute. I believe innovation thrives through collaboration, and I’m always eager to learn, improve, and build something extraordinary together! 🚀
+							If any of my projects interest you, feel free to explore the code, share your thoughts, or contribute. I believe innovation thrives through collaboration, and I’m always eager to learn, improve, and build something extraordinary together!
 						</div>
 
 						<div className="projects-list">

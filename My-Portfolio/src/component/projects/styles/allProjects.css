@@ -15,8 +15,23 @@
 	overflow: hidden;
 }
 
-@media (max-width: 600px) {
+/* Tablet view - one container per row */
+@media (max-width: 1024px) and (min-width: 769px) {
+	.all-projects-project {
+		width: 100%;
+	}
+}
+
+/* Mobile view - two containers per row */
+@media (max-width: 768px) {
 	.all-projects-project {
 		width: calc(100% / 2);
+	}
+}
+
+/* Small mobile view - one container per row */
+@media (max-width: 600px) {
+	.all-projects-project {
+		width: 100%;
 	}
 }

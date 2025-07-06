@@ -57,12 +57,14 @@ const About = () => {
 
 								<div className="subtitle about-subtitle">
 									<h2>What I Do</h2>
-									<ul>
-										<li>✅ Developing full-stack applications with a clean, maintainable codebase.</li>
-										<li>✅ Building RESTful APIs for seamless data communication.</li>
-										<li>✅ Optimizing databases for performance and scalability.</li>
-										<li>✅ Enhancing user experience with responsive and interactive UIs.</li>
-									</ul>
+
+										✅ Developing full-stack applications with a clean, maintainable codebase.<br/>
+										✅ Building RESTful APIs for seamless data communication.<br/>
+										✅ Optimizing databases for performance and scalability.<br/>
+										✅ Enhancing user experience with responsive and interactive UIs.<br/>
+										✅ Implementing DevOps practices with Docker containerization.<br/>
+										✅ Integrating cloud services and real-time databases.<br/>
+
 								</div>
 
 								<div className="subtitle about-subtitle">
@@ -71,9 +73,11 @@ const About = () => {
 										<br/>
 										🔹 <strong>Frontend:</strong> React.js, HTML5, CSS3, JavaScript, Tailwind CSS, Redux
 										<br/>
-										🔹 <strong>Backend:</strong> Node.js, Express.js
+										🔹 <strong>Backend:</strong> Node.js, Express.js, FastAPI
 										<br/>
-										🔹 <strong>Databases:</strong> MongoDB, MySQL
+										🔹 <strong>Databases:</strong> MongoDB, MySQL, Redis
+										<br/>
+										🔹 <strong>DevOps & Cloud:</strong> Docker, Firebase
 										<br/>
 										🔹 <strong>Version Control:</strong> Git, GitHub
 										<br/>
@@ -87,8 +91,11 @@ const About = () => {
 									<p>
 										My foundation in <strong>Object-Oriented Programming, Data Structures & Algorithms, and software architecture</strong> ensures I deliver high-quality solutions that meet industry standards.
 									</p>
+									<p>
+										Currently expanding my expertise into <strong>DevOps practices</strong>, I have successfully implemented Docker containerization across multiple projects and am exploring cloud technologies like Firebase and Redis for enhanced application performance and scalability.
+									</p>
 									<p style={{ fontWeight: "bold", color: "#007bff" }}>
-										🚀 Let’s build something amazing together!
+										 Let’s build something amazing together!
 									</p>
 								</div>
 							</div>

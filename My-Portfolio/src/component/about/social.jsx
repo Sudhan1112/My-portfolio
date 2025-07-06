@@ -4,6 +4,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
   faGithub,
   faLinkedin,
+  faDocker,
 } from "@fortawesome/free-brands-svg-icons";
 
 import INFO from "../../data/User";
@@ -77,6 +78,15 @@ const Socials = () => {
             <GeeksForGeeksIcon className="social-icon" />
           </div>
           <div className="social-text">Follow on GeeksforGeeks</div>
+        </a>
+      </div>
+
+      <div className="social">
+        <a href={INFO.socials.dockerhub} target="_blank" rel="noreferrer" title="Docker Hub Profile">
+          <div className="social-icon">
+            <FontAwesomeIcon icon={faDocker} className="social-icon" />
+          </div>
+          <div className="social-text">Follow on Docker Hub</div>
         </a>
       </div>
 

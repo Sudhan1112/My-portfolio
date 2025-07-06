@@ -6,7 +6,7 @@ import Footer from "../component/common/Footer";
 import Logo from "../component/common/Logo";
 import Socials from "../component/about/social";
 
-import INFO from "../data/user";
+import INFO from "../data/User";
 import SEO from "../data/Seo";
 
 import "./styles/contact.css";
@@ -59,7 +59,7 @@ const Contact = () => {
 							I’m always open to collaborating on interesting projects and contributing to open-source initiatives. If you have a great idea or are working on something innovative, let’s team up and bring it to life!
 							<br />
 							<br />
-							I believe in the power of shared learning and building meaningful connections. If you’d like to work together, discuss opportunities, or exchange insights, feel free to reach out. Looking forward to connecting and creating something impactful together! 🚀
+							I believe in the power of shared learning and building meaningful connections. If you’d like to work together, discuss opportunities, or exchange insights, feel free to reach out. Looking forward to connecting and creating something impactful together!
 						</div>
 					</div>
 
