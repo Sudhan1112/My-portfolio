@@ -1,16 +1,15 @@
 import React from "react";
 
 import Project from "./Project";
-
-import INFO from "../../data/User";
+import { getAllProjects } from "../../data/services/projectsService";
 
 import "./styles/allProjects.css";
 
 const AllProjects = () => {
-	console.log(INFO.INFO);
+	const projects = getAllProjects();
 	return (
 		<div className="all-projects-container">
-			{INFO.projects.map((project, index) => (
+			{projects.map((project, index) => (
 				<div className="all-projects-project" key={index}>
 					<Project
 						logo={project.logo}
