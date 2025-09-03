@@ -12,6 +12,23 @@
   margin-bottom: 30px;
 }
 
+/* Responsive adjustments for mobile */
+@media (max-width: 600px) {
+  .achievements-title {
+    margin-top: 60px;
+  }
+  
+  .achievements-subtitle {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .achievements-title {
+    margin-top: 50px;
+  }
+}
+
 .timeline {
   position: relative;
   margin: 20px 0 40px 0;

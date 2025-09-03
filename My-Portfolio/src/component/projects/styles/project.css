@@ -1,5 +1,10 @@
 @import "../../../data/styles.css";
 
+/* Prevent body scroll when modal is open */
+.no-scroll {
+	overflow: hidden;
+}
+
 .project {
 	mix-blend-mode: normal;
 	border-radius: 20px;
@@ -146,7 +151,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	z-index: 1000;
+	z-index: 9999;
 	padding: 20px;
 	backdrop-filter: blur(5px);
 }
@@ -161,6 +166,7 @@
 	box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
 	border: 1px solid var(--border-color);
 	animation: modalSlideIn 0.3s ease-out;
+	position: relative;
 }
 
 @keyframes modalSlideIn {
@@ -235,8 +241,15 @@
 
 .project-modal-content {
 	padding: 30px;
-	overflow: auto;
+	overflow-y: auto;
+	overflow-x: hidden;
 	max-height: calc(80vh - 110px);
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none; /* IE and Edge */
+}
+
+.project-modal-content::-webkit-scrollbar {
+	display: none; /* Chrome, Safari, Opera */
 }
 
 .project-modal-description {
