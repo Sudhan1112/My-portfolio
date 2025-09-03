@@ -1,4 +1,4 @@
-import { faCloudMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { faCloudMoon, faSun, faHome, faUser, faCode, faTrophy, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -29,7 +29,8 @@ const NavBar = (props) => {
 		<React.Fragment>
 			<div className="nav-container">
 				<nav className="navbar">
-					<div className="nav-background">
+					{/* Desktop/Tablet Navigation */}
+					<div className="nav-background desktop-nav">
 						<ul className="nav-list">
 							<li
 								className={
@@ -57,7 +58,6 @@ const NavBar = (props) => {
 								}
 							>
 								<Link to="/projects">Projects</Link>
-								{/* Projects */}
 							</li>
 							<li
 								className={
@@ -88,6 +88,67 @@ const NavBar = (props) => {
 								)}
 							</li>
 						</ul>
+					</div>
+
+					{/* Mobile Navigation - Icon Based */}
+					<div className="mobile-nav">
+						<div className="mobile-nav-background">
+							<Link 
+								to="/" 
+								className={`mobile-nav-item ${active === "home" ? "active" : ""}`}
+								data-title="Home"
+							>
+								<FontAwesomeIcon icon={faHome} />
+								<span>Home</span>
+							</Link>
+							
+							<Link 
+								to="/about" 
+								className={`mobile-nav-item ${active === "about" ? "active" : ""}`}
+								data-title="About"
+							>
+								<FontAwesomeIcon icon={faUser} />
+								<span>About</span>
+							</Link>
+							
+							<Link 
+								to="/projects" 
+								className={`mobile-nav-item ${active === "projects" ? "active" : ""}`}
+								data-title="Projects"
+							>
+								<FontAwesomeIcon icon={faCode} />
+								<span>Projects</span>
+							</Link>
+							
+							<Link 
+								to="/achievements" 
+								className={`mobile-nav-item ${active === "achievements" ? "active" : ""}`}
+								data-title="Achievements"
+							>
+								<FontAwesomeIcon icon={faTrophy} />
+								<span>Achievements</span>
+							</Link>
+							
+							<Link 
+								to="/contact" 
+								className={`mobile-nav-item ${active === "contact" ? "active" : ""}`}
+								data-title="Contact"
+							>
+								<FontAwesomeIcon icon={faEnvelope} />
+								<span>Contact</span>
+							</Link>
+							
+							<button 
+								className="mobile-theme-toggle"
+								onClick={themeToggle}
+							>
+								{theme === "light-theme" ? (
+									<FontAwesomeIcon icon={faCloudMoon} />
+								) : (
+									<FontAwesomeIcon icon={faSun} />
+								)}
+							</button>
+						</div>
 					</div>
 				</nav>
 			</div>
