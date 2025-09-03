@@ -17,13 +17,13 @@
 }
 
 .nav-background {
-	width: 380px;
-	height: 40px;
-	padding-left: 0%;
-	padding-right: 0%;
+	width: 480px;           /* was 380px */
+	height: 40px;           /* was 40px */
+	padding-left: 10px;
+	padding-right: 10px;
 	background: var(--background);
-	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-	border-radius: 40px;
+	box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); /* slightly stronger shadow */
+	border-radius: 50px;  
 }
 
 .nav-list {
@@ -31,14 +31,15 @@
 	justify-content: space-between;
 	list-style: none;
 	align-items: center;
-	margin-left: -16px;
-	margin-right: 20px;
-	margin-top: 11px;
+	margin: 0;              /* reset weird offsets */
+	padding: 0 20px;        /* give breathing space */
+	height: 100%;           /* make items align nicely */
 }
 
 .nav-item {
 	font-weight: bold;
-	font-size: 80%;
+	font-size: 90%;          /* was 80% */
+	letter-spacing: 0.5px;   /* cleaner text look */
 }
 
 .nav-item.active a {
@@ -58,7 +59,7 @@
 .nav-item-icon {
 	cursor: pointer;
 	font-weight: bold;
-	font-size: 85%;
+	font-size: 90%;
 	color: var(--primary-color);
 }
 
@@ -66,13 +67,13 @@
 	.navbar {
 		margin-left: 25%;
 		margin-right: 25%;
-		width: 80%;
+		width: 90%;
 		font-size: 80%;
 	}
 
 	.nav-background {
 		width: 80%;
-		height: 40px;
+		height: 50px;
 	}
 
 	.nav-item {

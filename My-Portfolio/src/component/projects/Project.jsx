@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Modal from "../ui/Modal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLink, faTimes, faExternalLink } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -224,10 +225,8 @@ const Project = (props) => {
 			</div>
 
 			{/* Detailed Modal */}
-			{showModal && (
-				<div className="project-modal-overlay" onClick={handleModalClose}>
-					<div className="project-modal" onClick={(e) => e.stopPropagation()}>
-						<div className="project-modal-header">
+			<Modal open={showModal} onClose={handleModalClose}>
+					<div className="project-modal-header">
 							{logo && (
 								<div className="project-modal-logo">
 									<img src={logo} alt="logo" />
@@ -288,9 +287,7 @@ const Project = (props) => {
 								</button>
 							</div>
 						</div>
-					</div>
-				</div>
-			)}
+			</Modal>
 		</React.Fragment>
 	);
 };

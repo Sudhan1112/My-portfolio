@@ -12,14 +12,12 @@ import {
 import Logo from "../component/common/Logo";
 import Footer from "../component/common/Footer";
 import NavBar from "../component/common/NavBar";
-import AllProjects from "../component/projects/AllProjects";
+import TypingAnimation from "../pages/TypingAnimation";
 
 import INFO from "../data/User";
 import SEO from "../data/Seo";
 
 import "./styles/homepage.css";
-
-
 
 // SVG Icons as React components
 const LeetCodeIcon = ({ className }) => (
@@ -117,7 +115,13 @@ const Homepage = () => {
 						<div className="homepage-first-area">
 							<div className="homepage-first-area-left-side">
 								<div className="title homepage-title">
-									{INFO.homepage.title}
+									<TypingAnimation 
+										roles={[
+											"MERN Stack Developer",
+											"Java Full Stack Developer", 
+											"DevOps Enthusiast"
+										]} 
+									/>
 								</div>
 
 								<div className="subtitle homepage-subtitle">
@@ -205,10 +209,6 @@ const Homepage = () => {
 									className="homepage-social-icon"
 								/>
 							</a>
-						</div>
-
-						<div className="homepage-projects">
-							<AllProjects />
 						</div>
 
 						<div className="page-footer">
