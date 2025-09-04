@@ -4,17 +4,19 @@
 	display: flex;
 	justify-content: left;
 	align-items: center;
-	padding-top: 130px;
+	padding-top: 80px;
 }
 
 .homepage-container {
-	padding-top: 25px;
+	padding-top: 50px; /* Increased from 20px to create more space */
+	padding-bottom: 40px;
 }
 
 .homepage-first-area {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	margin-top: 30px; /* Added margin to push content down */
 }
 
 .homepage-first-area-left-side {
@@ -27,10 +29,12 @@
 	width: 85% !important;
 	position: relative;
 	overflow: hidden;
+	margin-top: 20px; /* Added margin to create space from profile picture */
 }
 
 .homepage-subtitle {
 	width: 85% !important;
+	margin-top: 15px; /* Added margin for better spacing */
 }
 
 .homepage-first-area-right-side {
@@ -240,8 +244,17 @@
 
 /* Responsive design */
 @media (max-width: 1024px) {
+	.homepage-logo-container {
+		padding-top: 60px;
+	}
+
+	.homepage-container {
+		padding-top: 40px; /* Adjusted for mobile */
+	}
+
 	.homepage-first-area {
 		flex-direction: column;
+		margin-top: 40px; /* Increased margin for mobile */
 	}
 
 	.homepage-first-area-left-side {
@@ -254,25 +267,29 @@
 
 	.homepage-title {
 		width: 100% !important;
-		margin-top: 20px;
+		margin-top: 30px; /* Increased margin for better spacing on mobile */
 		order: 2;
+		font-size: 32px;
 	}
 
 	.homepage-subtitle {
 		width: 100% !important;
-		margin-top: 10px;
+		margin-top: 15px;
 		order: 3;
 	}
 
 	.homepage-first-area-right-side {
 		width: 100%;
 		order: 1;
+		justify-content: center; /* Center the image */
 	}
 
 	.homepage-image-container {
-		padding-top: 50px;
-		padding-bottom: 50px;
-		margin-left: 10px;
+		width: 300px;
+		height: 300px;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		margin: 0 auto;
 		order: 1;
 	}
 
@@ -306,8 +323,13 @@
 }
 
 @media (max-width: 768px) {
+	.homepage-container {
+		padding-top: 30px;
+	}
+
 	.homepage-title {
 		font-size: 1.8rem;
+		margin-top: 25px;
 	}
 
 	.typing-container {
@@ -317,6 +339,30 @@
 	.cursor {
 		width: 1px;
 		height: 0.9em;
+	}
+
+	.homepage-first-area {
+		margin-top: 30px;
+	}
+}
+
+@media (max-width: 600px) {
+	.homepage-container {
+		padding-top: 20px;
+	}
+
+	.homepage-first-area {
+		margin-top: 20px;
+	}
+
+	.homepage-title {
+		margin-top: 20px;
+		font-size: 1.6rem;
+	}
+
+	.homepage-image-container {
+		width: 250px;
+		height: 250px;
 	}
 }
 
