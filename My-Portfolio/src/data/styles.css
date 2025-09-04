@@ -1,16 +1,16 @@
-/* light theme colors */
+/* Light theme colors - Clean and minimal */
 .light-theme {
 	/* ------- colors ------- */
-	--primary-color: #27272a;
-	--secondary-color: #65656d;
-	--tertiary-color: #929292;
-	--quaternary-color: #e4e4e7;
+	--primary-color: #1f2937;
+	--secondary-color: #6b7280;
+	--tertiary-color: #9ca3af;
+	--quaternary-color: #e5e7eb;
 	--link-color: #14b8a6;
-	/* --border-color: #e9e6e6; */
-	--border-color: #f4f4f5;
-	--background: #fff;
-	--hover-background: #f8f8f8;
-	--secondary-background: #fbfdfd;
+	--border-color: #f3f4f6;
+	--background: #ffffff;
+	--background-rgb: 255, 255, 255;
+	--hover-background: #f9fafb;
+	--secondary-background: #f8fafc;
 	/* ---------------------- */
 
 	/* ------- fonts ------- */
@@ -19,18 +19,19 @@
 	/* --------------------- */
 }
 
-/* dark theme colors */
+/* Dark theme colors - True black with teal accents */
 .dark-theme {
 	/* ------- colors ------- */
-	--primary-color: #fefeff;
-	--secondary-color: #d8d8db;
-	--tertiary-color: #9c9c9c;
-	--quaternary-color: #1e1e1f;
+	--primary-color: #ffffff;
+	--secondary-color: #ffffff;
+	--tertiary-color: #ffffff;
+	--quaternary-color: #ffffff;
 	--link-color: #14b8a6;
-	--border-color: #111331;
-	--background: #0e182c;
-	--hover-background: #0e182c;
-	--secondary-background: #101e38;
+	--border-color: #1f2937;
+	--background: #000000;
+	--background-rgb: 0, 0, 0;
+	--hover-background: #111111;
+	--secondary-background: #0a0a0a;
 	/* ---------------------- */
 
 	/* ------- fonts ------- */
