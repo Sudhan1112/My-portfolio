@@ -96,6 +96,12 @@ const Achievements = () => {
               <Logo width={46} />
             </div>
           </div>
+          
+          {/* 🚧 Development Notice Widget */}
+          <div className="dev-notice">
+            🚧 This page is currently under development 🚧
+          </div>
+
 
           <div className="achievements-container">
             <div className="title achievements-title">

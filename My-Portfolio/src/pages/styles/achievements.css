@@ -34,6 +34,56 @@
   margin: 20px 0 40px 0;
   padding-left: 28px;
 }
+.dev-notice {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #fff3cd;
+  color: #856404;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 18px;
+  border: 1px solid #ffeeba;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
+  animation: pulse 1.5s infinite;
+  max-width: 280px;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Tablet adjustments */
+@media (max-width: 992px) {
+  .dev-notice {
+    top: 15px;
+    right: 15px;
+    font-size: 13px;
+    padding: 10px 14px;
+    max-width: 240px;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 576px) {
+  .dev-notice {
+    top: auto;
+    bottom: 15px;
+    right: 50%;
+    transform: translateX(50%);
+    font-size: 12px;
+    padding: 8px 12px;
+    max-width: 90%;
+    border-radius: 8px;
+  }
+}
 
 /* Animated timeline line */
 .timeline:before {
