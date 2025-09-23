@@ -40,5 +40,3 @@ This profile serves as a central hub for my projects and information about me. Y
 
 Feel free to explore my projects and reach out if you'd like to collaborate or connect.
 **Deployment Link: [My Portfolio](https://my-portfolio-sudhan1112.vercel.app/)
-
-updated ui
