@@ -2,40 +2,40 @@
 .light-theme {
 	/* ------- colors ------- */
 	--primary-color: #1f2937;
-	--secondary-color: #6b7280;
-	--tertiary-color: #9ca3af;
+	--secondary-color: #4b5563;
+	--tertiary-color: #6b7280;
 	--quaternary-color: #e5e7eb;
-	--link-color: #14b8a6;
-	--border-color: #f3f4f6;
+	--link-color: #14b8a6; /* Teal accent */
+	--border-color: #e5e7eb;
 	--background: #ffffff;
 	--background-rgb: 255, 255, 255;
-	--hover-background: #f9fafb;
-	--secondary-background: #f8fafc;
-	/* ---------------------- */
+	--hover-background: #f3f4f6;
+	--secondary-background: #f9fafb;
 
 	/* ------- fonts ------- */
 	--primary-font: "Heebo", sans-serif;
 	--secondary-font: "Roboto", sans-serif;
-	/* --------------------- */
 }
 
-/* Dark theme colors - True black with teal accents */
+/* 🖤 Neutral Gray Dark Theme with Teal Accent */
 .dark-theme {
-	/* ------- colors ------- */
-	--primary-color: #ffffff;
-	--secondary-color: #ffffff;
-	--tertiary-color: #ffffff;
-	--quaternary-color: #ffffff;
-	--link-color: #14b8a6;
-	--border-color: #1f2937;
-	--background: #000000;
-	--background-rgb: 0, 0, 0;
-	--hover-background: #111111;
-	--secondary-background: #0a0a0a;
-	/* ---------------------- */
+	/* Text colors (soft, readable) */
+	--primary-color: #e6e6e6;
+	--secondary-color: #cccccc;
+	--tertiary-color: #a6a6a6;
 
-	/* ------- fonts ------- */
+	/* Accent restored (teal) */
+	--link-color: #14b8a6; /* Back to teal for vibrance */
+
+	/* Neutral gray background layers */
+	--background: #121212; /* Main dark background */
+	--background-rgb: 18, 18, 18;
+
+	--secondary-background: #1a1a1a; /* Section background */
+	--hover-background: #1f1f1f;     /* Hover shade */
+	--border-color: #2a2a2a;         /* Soft borders */
+
+	/* Fonts remain same */
 	--primary-font: "Heebo", sans-serif;
 	--secondary-font: "Roboto", sans-serif;
-	/* --------------------- */
 }

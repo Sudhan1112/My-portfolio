@@ -13,16 +13,42 @@ const INFO = {
 	},
 
 	homepage: {
-		title: "MERN Stack Developer • Java Full Stack Developer • DevOps Developer",
-		description:
-			"I am a full-stack web developer skilled in React.js, HTML5, CSS3, and JavaScript for frontend and Node.js, Express.js, FastAPI, MongoDB, MySQL, and Redis for backend development. I specialize in building scalable, secure, and high-performance web applications with a focus on clean code, seamless user experience, and industry best practices. Recently expanding into DevOps, I have successfully implemented Docker containerization across multiple projects and integrated cloud services like Firebase. I enjoy solving complex problems, optimizing RESTful APIs, and managing databases efficiently. With a strong foundation in Object-Oriented Programming and Data Structures & Algorithms, I write maintainable and efficient code across the full stack. I have worked on various open-source projects, and I welcome collaboration and feedback. If you're interested, feel free to explore my work and contribute. I am always eager to learn, innovate, and grow as a developer.",
-	},
+  title: "MERN Stack Developer • Java Full Stack Developer • DevOps Developer",
+  description: `
+    I am a <strong>full-stack</strong> and <strong>Java backend developer</strong> specializing in 
+    <strong>React.js</strong>, <strong>Next.js</strong>, <strong>Spring Boot</strong>, 
+    <strong>Node.js</strong>, <strong>Express.js</strong>, and database systems like 
+    <strong>PostgreSQL</strong>, <strong>MongoDB</strong>, <strong>MySQL</strong>, and 
+    <strong>Redis</strong>. I build <strong>secure</strong>, <strong>production-ready applications</strong>
+    using <strong>modern architectures</strong>, <strong>microservices</strong>, 
+    <strong>RESTful APIs</strong>, <strong>Docker</strong>, and <strong>CI/CD pipelines</strong>. 
+    With strong foundations in <strong>Java</strong>, <strong>OOP</strong>, <strong>DSA</strong>, and 
+    <strong>system design</strong>, I deliver <strong>optimized</strong>, 
+    <strong>maintainable</strong>, and <strong>scalable</strong> software.
+  `
+},
 
 	about: {
-		title: "I'm Sudhan S. I live in Chennai, India, hoping for the best and working hard for better results.",
+		title: "I'm Sudhan S. I live in Chennai, India, aiming higher every day and working hard for better results.",
 	},
 
 	projects: [
+		{
+			title: "Core Banking System (Next.js + Spring Boot)",
+			description:
+				"A secure, multi-tier digital banking platform for customer onboarding, account management, and claims processing. Features JWT Authentication, RBAC, and a responsive dashboard.",
+			linkText: "View Project",
+			link: "https://github.com/Sudhan1112/Core-Banking-System",
+			techStack: [
+				{ name: "Next.js", icon: "react", color: "#61DAFB" },
+				{ name: "Spring Boot", icon: "java", color: "#6DB33F" },
+				{ name: "PostgreSQL", icon: "postgresql", color: "#336791" },
+				{ name: "Docker", icon: "docker", color: "#2496ED" },
+				{ name: "Tailwind CSS", icon: "tailwind", color: "#06B6D4" }
+			],
+			problemSolved: "Enables secure user onboarding, account management, money transfers, and claims processing with a production-ready microservices architecture.",
+			features: ["JWT Authentication & RBAC", "Account Management", "Secure Money Transfers", "KYC Document Upload (Supabase)", "Admin Portal", "Dockerized Deployment", "JUnit Testing"]
+		},
 		{
 			title: `Productivity Panda "MERN STACK" Project`,
 			description:
@@ -110,7 +136,7 @@ const INFO = {
 			problemSolved: "Addresses the need for efficient incident tracking and management in organizations, providing a centralized system for documentation, categorization, and analysis to improve safety protocols and operational response.",
 			features: ["Incident Documentation", "Image Upload with Firebase", "Component-Based Architecture", "Controller Pattern", "RESTful API Design", "Responsive UI", "Error Handling", "CRUD Operations"]
 		}
-		,{
+		, {
 			title: "Construction Checklist App `REACT` Project",
 			description:
 				"A sleek, intuitive React + Tailwind CSS web app that helps construction managers stay on top of their project game through a smart, visual checklist system with real-time progress tracking.",
@@ -124,7 +150,7 @@ const INFO = {
 			problemSolved: "Streamlines construction project management by providing an intuitive checklist system with hierarchical task management, real-time progress tracking, and smart validation to ensure project completion accuracy.",
 			features: ["Parent + Sub Activity Management", "Real-Time Progress Tracking", "Smart Weight Validation (100%)", "Color-Coded Progress Indicators", "Save With Confidence", "Modular Clean Architecture", "Toastify Feedback System"]
 		},
-		
+
 		{
 			title: `Simple Blog-app "REDUX" Project`,
 			description:

@@ -156,7 +156,7 @@
 	overflow: visible;
 	font-weight: inherit;
 	font-size: inherit;
-	color: inherit;
+	color: var(--link-color);
 	position: relative;
 }
 

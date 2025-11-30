@@ -31,6 +31,7 @@
 
 .about-title {
 	width: 100% !important;
+	color: var(--link-color);
 }
 
 .about-subtitle {
@@ -67,6 +68,54 @@
 
 .about-socials-mobile {
 	display: none;
+}
+
+/* Phase-based Skills Styles */
+.skills-phases {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+}
+
+.phase-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: 8px;
+	line-height: 1.8;
+}
+
+.phase-number {
+	font-weight: 700;
+	color: var(--secondary-color);
+	font-size: 15px;
+	min-width: 20px;
+}
+
+.phase-title {
+	font-weight: 600;
+	color: var(--link-color);
+	font-size: 15px;
+	white-space: nowrap;
+}
+
+.phase-separator {
+	color: var(--secondary-color);
+	opacity: 0.5;
+	font-weight: 300;
+}
+
+.phase-skills {
+	flex: 1;
+	color: var(--primary-color);
+	font-size: 14px;
+	line-height: 1.8;
+}
+
+.phase-skills strong {
+	font-weight: 600;
+	color: var(--primary-color);
 }
 
 @media (max-width: 1024px) {
@@ -106,6 +155,25 @@
 	}
 }
 
+@media (max-width: 768px) {
+	.phase-item {
+		gap: 6px;
+	}
+
+	.phase-number {
+		font-size: 14px;
+	}
+
+	.phase-title {
+		font-size: 14px;
+	}
+
+	.phase-skills {
+		font-size: 13px;
+		margin-left: 28px;
+	}
+}
+
 @media (max-width: 600px) {
 	.about-container {
 		padding-top: 60px;
@@ -113,5 +181,23 @@
 
 	.about-image-container {
 		width: 80%;
+	}
+
+	.skills-phases {
+		gap: 16px;
+	}
+
+	.phase-number {
+		font-size: 13px;
+	}
+
+	.phase-title {
+		font-size: 13px;
+		white-space: normal;
+	}
+
+	.phase-skills {
+		font-size: 12px;
+		margin-left: 24px;
 	}
 }

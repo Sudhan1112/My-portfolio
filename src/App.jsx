@@ -13,7 +13,7 @@ function App() {
 	return (
 		<Router>
 			<div className="App">
-				<Suspense fallback={<div style={{padding:20}}>Loading…</div>}>
+				<Suspense fallback={<div style={{ padding: 20 }}>Loading…</div>}>
 					<Routes>
 						<Route path="/" element={<Homepage />} />
 						<Route path="/about" element={<About />} />

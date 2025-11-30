@@ -48,56 +48,128 @@ const About = () => {
 								{/* Directly adding descriptions with appropriate HTML tags */}
 								<div className="subtitle about-subtitle">
 									<p>
-										I am a full-stack web developer passionate about building scalable, secure, and high-performance web applications.
+										I'm a <strong>full-stack</strong> and <strong>Java backend developer</strong> who builds
+										<strong> fast</strong>, <strong>secure</strong>, and <strong>scalable</strong> applications.
+										I work with <strong>React.js</strong>, <strong>Next.js</strong>, <strong>Spring Boot</strong>,
+										<strong>Node.js</strong>, and databases like <strong>PostgreSQL</strong>,
+										<strong>MongoDB</strong>, <strong>MySQL</strong>, and <strong>Redis</strong>.
 									</p>
+
 									<p>
-										My expertise spans frontend development with <strong>React.js, HTML5, CSS3, and JavaScript</strong>, and backend development using <strong>Node.js, Express.js, MongoDB, and MySQL</strong>.
+										I enjoy turning real problems into <strong>clean</strong>, <strong>efficient</strong>, and
+										<strong>production-ready software</strong>.
 									</p>
 								</div>
 
 								<div className="subtitle about-subtitle">
 									<h2>What I Do</h2>
 
-										✅ Developing full-stack applications with a clean, maintainable codebase.<br/>
-										✅ Building RESTful APIs for seamless data communication.<br/>
-										✅ Optimizing databases for performance and scalability.<br/>
-										✅ Enhancing user experience with responsive and interactive UIs.<br/>
-										✅ Implementing DevOps practices with Docker containerization.<br/>
-										✅ Integrating cloud services and real-time databases.<br/>
-
+									✔ <strong>Build full-stack apps</strong> with React/Next.js & Spring Boot/Node.js <br />
+									✔ Create <strong>secure REST APIs</strong> with JWT, RBAC & BCrypt <br />
+									✔ Design <strong>scalable PostgreSQL & MongoDB databases</strong> <br />
+									✔ Containerize apps using <strong>Docker & Docker Compose</strong> <br />
+									✔ Build responsive UI with <strong>Tailwind CSS</strong> <br />
 								</div>
 
 								<div className="subtitle about-subtitle">
-									<h2>My Skills</h2>
-										🔹 <strong>Programming Languages:</strong> C++, Python, Java, JavaScript
-										<br/>
-										🔹 <strong>Frontend:</strong> React.js, HTML5, CSS3, JavaScript, Tailwind CSS, Redux
-										<br/>
-										🔹 <strong>Backend:</strong> Node.js, Express.js, FastAPI
-										<br/>
-										🔹 <strong>Databases:</strong> MongoDB, MySQL, Redis
-										<br/>
-										🔹 <strong>DevOps & Cloud:</strong> Docker, Firebase
-										<br/>
-										🔹 <strong>Version Control:</strong> Git, GitHub
-										<br/>
+									<h2>Technical Skills</h2>
+
+									<div className="skills-phases">
+										<div className="phase-item">
+											<span className="phase-number">1.</span>
+											<span className="phase-title">System Design</span>
+											<span className="phase-separator">—</span>
+											<span className="phase-skills">
+												<strong>System Design</strong>, <strong>Design Patterns</strong>, <strong>Microservices Architecture</strong>, <strong>OOP</strong>, <strong>Data Structures & Algorithms</strong>
+											</span>
+										</div>
+
+										<div className="phase-item">
+											<span className="phase-number">2.</span>
+											<span className="phase-title">UI/UX Prototyping</span>
+											<span className="phase-separator">—</span>
+											<span className="phase-skills">
+												<strong>Figma</strong>, <strong>Adobe XD</strong>, <strong>Canva</strong>, <strong>Wireframing</strong>, <strong>Prototyping</strong>, <strong>Responsive Layout Design</strong>
+											</span>
+										</div>
+
+										<div className="phase-item">
+											<span className="phase-number">3.</span>
+											<span className="phase-title">Frontend Development</span>
+											<span className="phase-separator">—</span>
+											<span className="phase-skills">
+												<strong>React.js</strong>, <strong>Next.js</strong>, <strong>JavaScript</strong>, <strong>HTML5</strong>, <strong>CSS3</strong>, <strong>Tailwind CSS</strong>, <strong>Bootstrap</strong>
+											</span>
+										</div>
+
+										<div className="phase-item">
+											<span className="phase-number">4.</span>
+											<span className="phase-title">Backend Development</span>
+											<span className="phase-separator">—</span>
+											<span className="phase-skills">
+												<strong>Java</strong>, <strong>Python</strong>, <strong>C++</strong>, <strong>Spring Boot</strong>, <strong>Node.js</strong>, <strong>Express.js</strong>, <strong>Spring MVC</strong>, <strong>Spring Data JPA</strong>, <strong>Hibernate ORM</strong>, <strong>RESTful APIs</strong>, <strong>Spring Security</strong>, <strong>Multithreading</strong>
+											</span>
+										</div>
+
+										<div className="phase-item">
+											<span className="phase-number">5.</span>
+											<span className="phase-title">Database</span>
+											<span className="phase-separator">—</span>
+											<span className="phase-skills">
+												<strong>MongoDB</strong>, <strong>MySQL</strong>, <strong>PostgreSQL</strong>, <strong>Redis</strong>, <strong>JDBC</strong>
+											</span>
+										</div>
+
+										<div className="phase-item">
+											<span className="phase-number">6.</span>
+											<span className="phase-title">Integration</span>
+											<span className="phase-separator">—</span>
+											<span className="phase-skills">
+												<strong>RESTful APIs</strong>, <strong>Microservices</strong>, <strong>Spring Boot</strong>, <strong>Express.js</strong>, <strong>Postman</strong>, <strong>Swagger</strong>
+											</span>
+										</div>
+
+										<div className="phase-item">
+											<span className="phase-number">7.</span>
+											<span className="phase-title">Testing</span>
+											<span className="phase-separator">—</span>
+											<span className="phase-skills">
+												<strong>JUnit</strong>, <strong>Mockito</strong>, <strong>Exception Handling</strong>, <strong>Postman</strong>
+											</span>
+										</div>
+
+										<div className="phase-item">
+											<span className="phase-number">8.</span>
+											<span className="phase-title">DevOps</span>
+											<span className="phase-separator">—</span>
+											<span className="phase-skills">
+												<strong>Docker</strong>, <strong>Docker Compose</strong>, <strong>Git & GitHub</strong>, <strong>Maven/Gradle</strong>, <strong>CI/CD</strong>
+											</span>
+										</div>
+
+										<div className="phase-item">
+											<span className="phase-number">9.</span>
+											<span className="phase-title">Deployment & Hosting</span>
+											<span className="phase-separator">—</span>
+											<span className="phase-skills">
+												<strong>Render</strong>, <strong>Vercel</strong>, <strong>AWS</strong>, <strong>Docker</strong>
+											</span>
+										</div>
+									</div>
 								</div>
 
 								<div className="subtitle about-subtitle">
-									<h2>My Approach</h2>
+									<h2>How I Work</h2>
 									<p>
-										I thrive on problem-solving, continuously learning new technologies, and writing efficient and scalable code.
+										I follow <strong>clean architecture</strong>, write <strong>maintainable code</strong>, and
+										build systems with <strong>performance</strong> and <strong>security</strong> as top priorities.
 									</p>
 									<p>
-										My foundation in <strong>Object-Oriented Programming, Data Structures & Algorithms, and software architecture</strong> ensures I deliver high-quality solutions that meet industry standards.
-									</p>
-									<p>
-										Currently expanding my expertise into <strong>DevOps practices</strong>, I have successfully implemented Docker containerization across multiple projects and am exploring cloud technologies like Firebase and Redis for enhanced application performance and scalability.
-									</p>
-									<p style={{ fontWeight: "bold", color: "#007bff" }}>
-										 Let’s build something amazing together!
+										<strong>Always learning. Always improving. Always shipping meaningful work.</strong>
 									</p>
 								</div>
+
+
 							</div>
 
 							<div className="about-left-side">

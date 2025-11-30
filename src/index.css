@@ -18,3 +18,26 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+
+/* View Transitions API styles */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* Ensure the new view is on top by default (for Bloom) */
+::view-transition-new(root) {
+  z-index: 9999;
+}
+
+/* For Dark -> Light (Implode) */
+/* We want the OLD view (Dark) to be on top so we can shrink it */
+[data-transition="implode"] ::view-transition-old(root) {
+  z-index: 9999 !important;
+}
+
+/* The NEW view (Light) should be behind */
+[data-transition="implode"] ::view-transition-new(root) {
+  z-index: 1 !important;
+}
