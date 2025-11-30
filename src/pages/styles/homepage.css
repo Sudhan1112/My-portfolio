@@ -1,0 +1,388 @@
+@import "../../data/styles.css";
+
+.homepage-logo-container {
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	padding-top: 80px;
+}
+
+.homepage-container {
+	padding-top: 50px; /* Increased from 20px to create more space */
+	padding-bottom: 40px;
+}
+
+.homepage-first-area {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 30px; /* Added margin to push content down */
+}
+
+.homepage-first-area-left-side {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.homepage-title {
+	width: 85% !important;
+	position: relative;
+	overflow: hidden;
+	margin-top: 20px; /* Added margin to create space from profile picture */
+}
+
+.homepage-subtitle {
+	width: 85% !important;
+	margin-top: 15px; /* Added margin for better spacing */
+}
+
+.homepage-first-area-right-side {
+	display: flex;
+	align-items: center;
+}
+
+.homepage-image-container {
+	width: 370px;
+	height: 370px;
+}
+
+.homepage-image-wrapper {
+	overflow: hidden;
+	border-radius: 10%;
+	transform: rotate(3deg);
+}
+
+.homepage-image-wrapper img {
+	width: 100%;
+}
+
+.homepage-socials {
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	padding-top: 30px;
+	gap: 10px;
+}
+
+.social-link {
+	display: inline-block;
+	padding: 8px;
+	border-radius: 8px;
+	transition: all 0.3s ease;
+	text-decoration: none;
+	position: relative;
+	overflow: hidden;
+}
+
+.social-link:hover {
+	background-color: var(--hover-background);
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.social-link::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+	transition: left 0.5s ease;
+}
+
+.social-link:hover::before {
+	left: 100%;
+}
+
+.homepage-social-icon {
+	font-size: 25px;
+	transition: all 0.3s ease;
+	color: var(--secondary-color);
+	display: block;
+}
+
+.social-link:hover .homepage-social-icon {
+	color: var(--link-color);
+	transform: scale(1.1);
+}
+
+/* SVG icons specific styling */
+.homepage-social-icon svg {
+	transition: all 0.3s ease;
+	color: var(--secondary-color);
+}
+
+.social-link:hover .homepage-social-icon svg {
+	color: var(--link-color);
+	transform: scale(1.1);
+}
+
+.homepage-after-title {
+	display: flex;
+}
+
+.homepage-projects {
+	flex-basis: 300px;
+	padding-top: 40px;
+}
+
+.homepage-articles {
+	flex-basis: 900px;
+	padding-top: 30px;
+	margin-left: -30px;
+}
+
+.homepage-article {
+	padding-bottom: 5px;
+}
+
+.homepage-works {
+	flex-basis: 600px;
+	padding-top: 30px;
+}
+
+/* Typing Animation Styles */
+.typing-container {
+	display: inline-block;
+	position: relative;
+	min-height: 1.2em; /* Prevent layout jump */
+}
+
+.typing-text {
+	display: inline-block;
+	white-space: nowrap;
+	overflow: visible;
+	font-weight: inherit;
+	font-size: inherit;
+	color: inherit;
+	position: relative;
+}
+
+.cursor {
+	display: inline-block;
+	background-color: var(--link-color);
+	width: 2px;
+	height: 1em;
+	margin-left: 2px;
+	animation: blink 1s infinite;
+	vertical-align: text-top;
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+	0%, 50% {
+		opacity: 1;
+	}
+	51%, 100% {
+		opacity: 0;
+	}
+}
+
+/* Fade animations for smooth role transitions */
+.typing-container.fade-out {
+	animation: fadeOut 0.3s ease-in-out;
+}
+
+.typing-container.fade-in {
+	animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	to {
+		opacity: 0.7;
+		transform: translateY(-3px);
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0.7;
+		transform: translateY(3px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Character reveal animation */
+.char-reveal {
+	display: inline-block;
+	animation: charReveal 0.1s ease-out forwards;
+	opacity: 0;
+	transform: translateX(-10px);
+}
+
+@keyframes charReveal {
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+/* Enhanced typing effect */
+.typing-text.typing-active {
+	position: relative;
+}
+
+.typing-text.typing-active::after {
+	content: '';
+	position: absolute;
+	right: -2px;
+	top: 0;
+	width: 2px;
+	height: 100%;
+	background: var(--link-color);
+	animation: blink 1s infinite;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+	.homepage-logo-container {
+		padding-top: 60px;
+	}
+
+	.homepage-container {
+		padding-top: 40px; /* Adjusted for mobile */
+	}
+
+	.homepage-first-area {
+		flex-direction: column;
+		margin-top: 40px; /* Increased margin for mobile */
+	}
+
+	.homepage-first-area-left-side {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		width: 100%;
+		order: 2;
+	}
+
+	.homepage-title {
+		width: 100% !important;
+		margin-top: 30px; /* Increased margin for better spacing on mobile */
+		order: 2;
+		font-size: 32px;
+	}
+
+	.homepage-subtitle {
+		width: 100% !important;
+		margin-top: 15px;
+		order: 3;
+	}
+
+	.homepage-first-area-right-side {
+		width: 100%;
+		order: 1;
+		justify-content: center; /* Center the image */
+	}
+
+	.homepage-image-container {
+		width: 300px;
+		height: 300px;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		margin: 0 auto;
+		order: 1;
+	}
+
+	.homepage-after-title {
+		flex-direction: column;
+	}
+
+	.homepage-projects {
+		flex-basis: auto;
+	}
+
+	.homepage-articles {
+		flex-basis: auto;
+	}
+
+	.homepage-works {
+		flex-basis: auto;
+		margin-left: -25px;
+		margin-right: -25px;
+	}
+
+	/* Typing animation responsive adjustments */
+	.typing-text {
+		font-size: inherit;
+	}
+
+	.cursor {
+		width: 1.5px;
+		margin-left: 1px;
+	}
+}
+
+@media (max-width: 768px) {
+	.homepage-container {
+		padding-top: 30px;
+	}
+
+	.homepage-title {
+		font-size: 1.8rem;
+		margin-top: 25px;
+	}
+
+	.typing-container {
+		min-height: 1.5em;
+	}
+
+	.cursor {
+		width: 1px;
+		height: 0.9em;
+	}
+
+	.homepage-first-area {
+		margin-top: 30px;
+	}
+}
+
+@media (max-width: 600px) {
+	.homepage-container {
+		padding-top: 20px;
+	}
+
+	.homepage-first-area {
+		margin-top: 20px;
+	}
+
+	.homepage-title {
+		margin-top: 20px;
+		font-size: 1.6rem;
+	}
+
+	.homepage-image-container {
+		width: 250px;
+		height: 250px;
+	}
+}
+
+/* Additional smooth transitions */
+.homepage-first-area-left-side {
+	transition: all 0.3s ease;
+}
+
+.homepage-title {
+	transition: all 0.3s ease;
+}
+
+/* Loading state for typing animation */
+.typing-container.loading {
+	opacity: 0;
+	animation: fadeInDelayed 0.5s ease 0.5s forwards;
+}
+
+@keyframes fadeInDelayed {
+	to {
+		opacity: 1;
+	}
+}

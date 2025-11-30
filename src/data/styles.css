@@ -1,0 +1,41 @@
+/* Light theme colors - Clean and minimal */
+.light-theme {
+	/* ------- colors ------- */
+	--primary-color: #1f2937;
+	--secondary-color: #6b7280;
+	--tertiary-color: #9ca3af;
+	--quaternary-color: #e5e7eb;
+	--link-color: #14b8a6;
+	--border-color: #f3f4f6;
+	--background: #ffffff;
+	--background-rgb: 255, 255, 255;
+	--hover-background: #f9fafb;
+	--secondary-background: #f8fafc;
+	/* ---------------------- */
+
+	/* ------- fonts ------- */
+	--primary-font: "Heebo", sans-serif;
+	--secondary-font: "Roboto", sans-serif;
+	/* --------------------- */
+}
+
+/* Dark theme colors - True black with teal accents */
+.dark-theme {
+	/* ------- colors ------- */
+	--primary-color: #ffffff;
+	--secondary-color: #ffffff;
+	--tertiary-color: #ffffff;
+	--quaternary-color: #ffffff;
+	--link-color: #14b8a6;
+	--border-color: #1f2937;
+	--background: #000000;
+	--background-rgb: 0, 0, 0;
+	--hover-background: #111111;
+	--secondary-background: #0a0a0a;
+	/* ---------------------- */
+
+	/* ------- fonts ------- */
+	--primary-font: "Heebo", sans-serif;
+	--secondary-font: "Roboto", sans-serif;
+	/* --------------------- */
+}

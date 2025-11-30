@@ -1,0 +1,138 @@
+@import "/src/data/styles.css";
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+	display: none;
+  }
+
+::-webkit-scrollbar-track {
+	background-color: var(--secondary-background);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #383636;
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: rgb(0, 0, 0);
+}
+
+/* ===== Page Layout ===== */
+.page-content {
+	background-color: var(--secondary-background);
+	position: relative;
+
+	/* ✅ Use grid for consistent centering */
+	display: grid;
+	grid-template-columns: 1fr minmax(auto, 1000px) 1fr;
+}
+
+/* network background */
+.page-content::after {
+	content: "";
+	position: fixed;
+	inset: 0;
+	background: none;
+	z-index: 0;
+}
+
+/* side borders */
+.page-content::before,
+.page-content::after {
+	content: "";
+	background-color: var(--background);
+	border: 1px solid var(--border-color);
+}
+
+/* grid placement for side borders */
+.page-content::before {
+	grid-column: 1;
+}
+
+.page-content::after {
+	grid-column: 3;
+}
+
+/* ✅ main content always centered */
+.content-wrapper {
+	grid-column: 2;
+	width: 100%;
+	max-width: 1000px;
+	margin: 0 auto;
+	z-index: 2; /* keep above side panels */
+}
+
+/* ===== Titles & Subtitles ===== */
+.title {
+	color: var(--primary-color);
+	font-family: var(--secondary-font);
+	font-size: 45px;
+	font-weight: 700;
+	width: 70%;
+}
+
+.subtitle {
+	padding-top: 10px;
+	color: var(--secondary-color);
+	font-size: 16px;
+	line-height: 28px;
+	width: 70%;
+	margin-top: 25px;
+}
+
+/* ===== Footer ===== */
+.page-footer {
+	position: relative;
+}
+
+.page-footer::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	border-top: 2px solid var(--tertiary-color);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1270px) {
+	.page-content {
+		grid-template-columns: 1fr minmax(auto, 90%) 1fr;
+	}
+
+	.content-wrapper {
+		max-width: 90%;
+	}
+}
+
+@media (max-width: 1024px) {
+	.page-content {
+		grid-template-columns: 1fr minmax(auto, 950px) 1fr;
+	}
+
+	.content-wrapper {
+		max-width: 950px;
+	}
+}
+
+@media (max-width: 800px) {
+	.page-content {
+		grid-template-columns: 1fr; /* no side borders */
+	}
+
+	.page-content::before,
+	.page-content::after {
+		display: none;
+	}
+
+	.content-wrapper {
+		max-width: 90%;
+		margin: 0 auto;
+		padding: 0 10px;
+	}
+
+	.title,
+	.subtitle {
+		width: 100%;
+	}
+}

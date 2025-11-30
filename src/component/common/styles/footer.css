@@ -1,0 +1,36 @@
+@import "../../../data/styles.css";
+
+.footer {
+	display: flex;
+	padding-top: 25px;
+	margin-top: 50px;
+	padding-bottom: 25px;
+	align-items: center;
+}
+
+.footer-links {
+	flex-basis: 50%;
+}
+
+.footer-links {
+	margin-left: -40px;
+}
+
+.footer-nav-link-item {
+	font-weight: bold;
+	font-size: 80%;
+}
+
+.footer-credits-text {
+	justify-content:flex-end;
+	color: var(--tertiary-color);
+	font-size: 14px;
+	text-align: right;
+}
+
+@media (max-width: 600px) {
+	.footer {
+		flex-direction: column;
+		height: 85px;
+	}
+}

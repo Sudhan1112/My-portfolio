@@ -1,0 +1,318 @@
+@import "../../../data/styles.css";
+
+.nav-container {
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.navbar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 999;
+	width: auto;
+	pointer-events: none; /* This allows clicks to pass through the navbar container */
+}
+
+/* Desktop/Tablet Navigation */
+.desktop-nav {
+	display: block;
+	pointer-events: auto;
+}
+
+.nav-background {
+	width: 480px;           /* was 380px */
+	height: 40px;           /* was 40px */
+	padding-left: 10px;
+	padding-right: 10px;
+	background: rgba(var(--background), 0.8);
+	backdrop-filter: blur(10px);        /* BLUR EFFECT ADDED */
+	-webkit-backdrop-filter: blur(10px); /* Safari support */
+	box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+	border-radius: 50px;  
+}
+
+.nav-list {
+	display: flex;
+	justify-content: space-between;
+	list-style: none;
+	align-items: center;
+	margin: 0;
+	padding: 0 20px;
+	height: 100%;
+}
+
+.nav-item {
+	font-weight: bold;
+	font-size: 90%;
+	letter-spacing: 0.5px;
+}
+
+.nav-item.active a {
+	color: var(--link-color) !important;
+}
+
+.nav-item a {
+	text-decoration: none;
+	color: var(--primary-color);
+}
+
+.nav-item a:hover {
+	color: var(--link-color);
+	transition: color 0.3s ease-in-out;
+}
+
+.nav-item-icon {
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 90%;
+	color: var(--primary-color);
+	pointer-events: auto;
+}
+
+/* Mobile Navigation - Icon Based */
+.mobile-nav {
+	display: none;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	pointer-events: auto;
+}
+
+.mobile-nav-background {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: rgba(var(--background), 0.8);
+	backdrop-filter: blur(10px);         /* BLUR EFFECT ADDED */
+	-webkit-backdrop-filter: blur(10px);
+	border-radius: 16px;
+	box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+	margin: 0 auto;
+	padding: 6px 10px;
+	gap: 8px;
+	max-width: 320px;
+	width: calc(100% - 32px);
+	height: 40px;
+}
+
+.mobile-nav-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	color: var(--secondary-color);
+	transition: all 0.3s ease;
+	flex: 1;
+	min-width: 0;
+	padding: 6px;
+	border-radius: 12px;
+	position: relative;
+	height: 36px;
+}
+
+.mobile-nav-item svg {
+	font-size: 16px;
+	transition: all 0.3s ease;
+}
+
+/* Hide text labels by default */
+.mobile-nav-item span {
+	display: none;
+}
+
+/* Active State */
+.mobile-nav-item.active {
+	color: var(--link-color);
+	background: rgba(20, 184, 166, 0.15);
+}
+
+.mobile-nav-item.active svg {
+	color: var(--link-color);
+	transform: scale(1.1);
+}
+
+/* Hover Effects */
+.mobile-nav-item:hover {
+	color: var(--primary-color);
+	background: rgba(255, 255, 255, 0.08);
+}
+
+.mobile-nav-item:hover svg {
+	transform: scale(1.05);
+}
+
+/* Hover Tooltip */
+.mobile-nav-item:hover::after {
+	content: attr(data-title);
+	position: absolute;
+	bottom: -30px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: rgba(var(--background), 0.8);
+	backdrop-filter: blur(10px);        /* BLUR EFFECT ADDED */
+	-webkit-backdrop-filter: blur(10px);
+	color: var(--primary-color);
+	padding: 6px 10px;
+	border-radius: 8px;
+	font-size: 11px;
+	font-weight: 500;
+	white-space: nowrap;
+	box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+	border: 1px solid var(--border-color);
+	z-index: 1000;
+	opacity: 1;
+	pointer-events: none;
+}
+
+/* Theme Toggle Button */
+.mobile-theme-toggle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: none;
+	border: none;
+	color: var(--secondary-color);
+	cursor: pointer;
+	transition: all 0.3s ease;
+	padding: 6px;
+	border-radius: 12px;
+	flex: 1;
+	min-width: 0;
+	height: 36px;
+}
+
+.mobile-theme-toggle svg {
+	font-size: 16px;
+	transition: all 0.3s ease;
+}
+
+.mobile-theme-toggle:hover {
+	color: var(--primary-color);
+	background: rgba(255, 255, 255, 0.08);
+}
+
+.mobile-theme-toggle:hover svg {
+	transform: scale(1.05);
+}
+
+/* Hover Tooltip for theme toggle */
+.mobile-theme-toggle:hover::after {
+	content: "Toggle Theme";
+	position: absolute;
+	bottom: -30px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: rgba(var(--background), 0.8);
+	backdrop-filter: blur(10px);        /* BLUR EFFECT ADDED */
+	-webkit-backdrop-filter: blur(10px);
+	color: var(--primary-color);
+	padding: 6px 10px;
+	border-radius: 8px;
+	font-size: 11px;
+	font-weight: 500;
+	white-space: nowrap;
+	box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+	border: 1px solid var(--border-color);
+	z-index: 1000;
+	opacity: 1;
+	pointer-events: none;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+	.desktop-nav {
+		display: block;
+	}
+	.mobile-nav {
+		display: none;
+	}
+	.nav-background {
+		width: 450px;
+		height: 48px;
+	}
+	.nav-list {
+		padding: 0 15px;
+	}
+	.nav-item {
+		font-size: 85%;
+	}
+}
+
+@media (max-width: 600px) {
+	.desktop-nav {
+		display: none;
+	}
+	.mobile-nav {
+		display: flex;
+	}
+	.navbar {
+		top: 2vh;
+		left: 50%;
+		transform: translateX(-50%);
+		width: auto;
+	}
+}
+
+@media (max-width: 480px) {
+	.navbar {
+		top: 15px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	.mobile-nav-background {
+		max-width: 300px;
+		width: calc(100% - 24px);
+		height: 38px;
+		padding: 4px 8px;
+	}
+	.mobile-nav-item {
+		height: 30px;
+		padding: 4px;
+	}
+	.mobile-nav-item svg {
+		font-size: 13px;
+	}
+	.mobile-theme-toggle {
+		height: 30px;
+		padding: 4px;
+	}
+	.mobile-theme-toggle svg {
+		font-size: 13px;
+	}
+}
+
+@media (max-width: 360px) {
+	.navbar {
+		top: 12px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	.mobile-nav-background {
+		max-width: 280px;
+		width: calc(100% - 20px);
+		height: 34px;
+		padding: 3px 6px;
+	}
+	.mobile-nav-item {
+		height: 28px;
+		padding: 3px;
+	}
+	.mobile-nav-item svg {
+		font-size: 12px;
+	}
+	.mobile-theme-toggle {
+		height: 28px;
+		padding: 3px;
+	}
+	.mobile-theme-toggle svg {
+		font-size: 12px;
+	}
+}
