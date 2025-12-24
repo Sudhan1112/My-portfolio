@@ -62,4 +62,3 @@ Follow these instructions to set up the project locally.
 <!-- Add your other contact links here -->
 
 ---
-Made with ❤️ by Sudhan S
