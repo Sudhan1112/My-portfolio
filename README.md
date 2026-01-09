@@ -58,7 +58,7 @@ Follow these instructions to set up the project locally.
 
 ## 📬 Contact
 
-- **GitHub**: [Sudhan1112](https://github.com/Sudhan1112)
+- **GitHub**: **9952921138**
 <!-- Add your other contact links here -->
 
 ---
