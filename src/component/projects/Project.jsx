@@ -101,39 +101,6 @@ const techIconMap = {
 		),
 		color: "#2496ED"
 	},
-	// Custom SVG icons for technologies not available in FontAwesome
-	mongodb: {
-		svg: (
-			<svg viewBox="0 0 24 24" fill="#47A248" width="20" height="20">
-				<path d="M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115-.28-.394-.53-.954-.735-1.44-.036.495-.055.685-.523 1.184-.723.566-4.438 3.682-4.74 10.02-.282 5.912 4.27 9.435 4.888 9.884l.07.05A73.49 73.49 0 0111.91 24h.481c.114-1.032.284-2.056.51-3.07.417-.296 5.352-3.618 4.292-11.375z"/>
-			</svg>
-		),
-		color: "#47A248"
-	},
-	express: {
-		svg: (
-			<svg viewBox="0 0 24 24" fill="#000000" width="20" height="20">
-				<path d="M24 18.588a1.529 1.529 0 01-1.895-.72l-3.45-4.771-.5-.667-4.003 5.444a1.466 1.466 0 01-1.802.708l5.158-6.92-4.798-6.251a1.595 1.595 0 011.9-.666L18.281 10.5l3.231-4.615a1.588 1.588 0 011.882-.712l-4.935 6.86 5.541 7.555z"/>
-			</svg>
-		),
-		color: "#000000"
-	},
-	redux: {
-		svg: (
-			<svg viewBox="0 0 24 24" fill="#764ABC" width="20" height="20">
-				<path d="M16.634 16.504c.87-.075 1.543-.84 1.5-1.754-.047-.914-.796-1.648-1.709-1.648h-.061c-.943.047-1.695.848-1.648 1.769.047.457.203.87.42 1.22-1.891 3.726-4.657 6.422-8.286 8.286-1.596.817-3.194 1.031-4.792.639-1.128-.274-2.006-1.031-2.457-2.085-.764-1.785-.3-4.009 1.09-6.058.426-.639.956-1.22 1.543-1.754-.046-.184-.092-.457-.138-.731-.014-.047-.03-.092-.046-.138-4.23 4.668-2.457 8.612-1.09 10.208 1.031 1.22 2.992 1.978 5.13 1.978.639 0 1.292-.077 1.931-.23 4.668-1.22 8.286-4.668 10.208-8.286zm2.457-4.668c-2.085-2.457-5.13-3.795-8.612-3.795h-.457c-.184-.412-.596-.686-1.09-.686h-.061c-.943.047-1.695.848-1.648 1.769.047.914.796 1.648 1.709 1.648h.061c.502-.047.956-.367 1.184-.824h.518c2.457 0 4.668.916 6.422 2.671 1.543 1.543 2.13 3.795 1.648 5.977-.351 1.543-1.317 2.671-2.671 3.226-.824.334-2.13.381-2.671.045-.412-.23-.824-.641-1.09-1.09-.184.137-.502.367-.777.549.641.824 1.361 1.317 2.13 1.543.32.092.641.137.961.137 1.361 0 2.671-.549 3.726-1.543 1.543-1.361 2.13-3.226 1.648-5.13-.457-1.892-1.892-3.726-3.795-4.668z"/>
-			</svg>
-		),
-		color: "#764ABC"
-	},
-	tailwind: {
-		svg: (
-			<svg viewBox="0 0 24 24" fill="#06B6D4" width="20" height="20">
-				<path d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C7.666,17.818,9.027,19.2,12.001,19.2c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"/>
-			</svg>
-		),
-		color: "#06B6D4"
-	},
 	file: {
 		svg: (
 			<svg viewBox="0 0 24 24" fill="#FF6B6B" width="20" height="20">
@@ -172,7 +139,7 @@ const TechIcon = ({ tech }) => {
 };
 
 const Project = (props) => {
-	const { logo, title, description, linkText, link, techStack, problemSolved, features } = props;
+	const { title, description, linkText, link, techStack, problemSolved, features, index, featured } = props;
 	const [showModal, setShowModal] = useState(false);
 
 	const handleCardClick = (e) => {
@@ -193,13 +160,12 @@ const Project = (props) => {
 
 	return (
 		<React.Fragment>
-			<div className="project" onClick={handleCardClick}>
+			<div className={`project ${featured ? "project-featured" : ""}`} onClick={handleCardClick}>
 				<div className="project-container">
-					{logo && (
-						<div className="project-logo">
-							<img src={logo} alt="logo" />
-						</div>
-					)}
+					<div className="project-chip-row">
+						<span className="project-chip">Project #{index + 1}</span>
+						{featured && <span className="project-chip project-chip-highlight">Featured</span>}
+					</div>
 					<div className="project-title">{title}</div>
 					<div className="project-description">{description}</div>
 
@@ -220,6 +186,7 @@ const Project = (props) => {
 							<FontAwesomeIcon icon={faLink} />
 						</div>
 						<div className="project-link-text">{linkText}</div>
+						<div className="project-link-arrow">→</div>
 					</div>
 				</div>
 			</div>
@@ -227,11 +194,6 @@ const Project = (props) => {
 			{/* Detailed Modal */}
 			<Modal open={showModal} onClose={handleModalClose}>
 					<div className="project-modal-header">
-							{logo && (
-								<div className="project-modal-logo">
-									<img src={logo} alt="logo" />
-								</div>
-							)}
 							<div className="project-modal-title-section">
 								<h2 className="project-modal-title">{title}</h2>
 								<button className="project-modal-close" onClick={handleModalClose}>

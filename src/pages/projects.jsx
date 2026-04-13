@@ -17,6 +17,8 @@ const Projects = () => {
 	}, []);
 
 	const currentSEO = SEO.find((item) => item.page === "projects");
+	const totalProjects = INFO.projects?.length || 0;
+	const primaryStacks = ["React.js", "Next.js", "Node.js", "TypeScript", "Docker"];
 
 	return (
 		<React.Fragment>
@@ -38,16 +40,40 @@ const Projects = () => {
 						</div>
 					</div>
 					<div className="projects-container">
-						<div className="title projects-title">
-							Creating Meaningful and Impactful Solutions
-						</div>
+						<div className="projects-hero">
+							<div className="title projects-title">
+								Projects that solve real product problems
+							</div>
 
-						<div className="subtitle projects-subtitle">
-							I have developed a variety of projects aimed at solving real-world challenges while adhering to best practices in <strong>full-stack development</strong> and <strong>DevOps practices</strong>. Many of these projects are <strong>encouraging exploration</strong>, <strong>learning</strong>, and <strong>collaboration</strong>.
-							<br />
-							By leveraging <b>React.js</b>, <b>HTML5</b>, <b>CSS3</b>, and <b>JavaScript</b> for seamless user experiences and <b>Node.js</b>, <b>Express.js</b>, <b>FastAPI</b>, <b>MongoDB</b>, <b>MySQL</b>, and <b>Redis</b> for building scalable, secure backend solutions, I focus on crafting efficient and maintainable applications. Additionally, I implement <b>Docker containerization</b> and <b>Firebase integration</b> to enhance deployment and scalability.
-							<br />
-							If any of my projects interest you, feel free to explore the code, share your thoughts, or contribute. I believe innovation thrives through collaboration, and I’m always eager to learn, improve, and build something extraordinary together!
+							<div className="subtitle projects-subtitle">
+								A curated set of full-stack builds across SaaS dashboards,
+								collaboration tools, and business workflows. Each project is
+								designed for usability, scalability, and production-minded
+								engineering.
+							</div>
+
+							<div className="projects-highlights">
+								<div className="projects-highlight-card">
+									<div className="projects-highlight-value">{totalProjects}+</div>
+									<div className="projects-highlight-label">Projects shipped</div>
+								</div>
+								<div className="projects-highlight-card">
+									<div className="projects-highlight-value">Full-stack</div>
+									<div className="projects-highlight-label">Delivery focus</div>
+								</div>
+								<div className="projects-highlight-card">
+									<div className="projects-highlight-value">Modern</div>
+									<div className="projects-highlight-label">Tooling and DevOps</div>
+								</div>
+							</div>
+
+							<div className="projects-tech-tags">
+								{primaryStacks.map((stack) => (
+									<span key={stack} className="projects-tech-tag">
+										{stack}
+									</span>
+								))}
+							</div>
 						</div>
 
 						<div className="projects-list">

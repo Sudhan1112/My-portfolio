@@ -1,0 +1,1 @@
+import{r as a,j as o}from"./index-XG1L-BKy.js";const c=({open:s,onClose:r,children:t})=>s?(a.useEffect(()=>(document.body.classList.add("no-scroll"),()=>document.body.classList.remove("no-scroll")),[]),o.jsx("div",{className:"project-modal-overlay",onClick:r,children:o.jsx("div",{className:"project-modal",onClick:e=>e.stopPropagation(),children:t})})):null;export{c as M};
