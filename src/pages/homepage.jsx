@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 
-import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
+import { faMailBulk, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faGithub,
@@ -86,7 +86,7 @@ const Homepage = () => {
 		position: stayLogo ? "fixed" : "relative",
 		top: stayLogo ? "3vh" : "auto",
 		zIndex: 999,
-		border: stayLogo ? "1px solid white" : "none",
+		border: stayLogo ? "1px solid var(--border-color)" : "none",
 		borderRadius: stayLogo ? "50%" : "none",
 		boxShadow: stayLogo ? "0px 4px 10px rgba(0, 0, 0, 0.25)" : "none",
 	};
@@ -102,7 +102,7 @@ const Homepage = () => {
 				/>
 			</Helmet>
 
-			<div className="page-content">
+			<div className="page-content homepage-page">
 				<NavBar active="home" />
 				<div className="content-wrapper">
 					<div className="homepage-logo-container">
@@ -112,104 +112,104 @@ const Homepage = () => {
 					</div>
 
 					<div className="homepage-container">
-						<div className="homepage-first-area">
-							<div className="homepage-first-area-left-side">
-								<div className="title homepage-title">
-									<TypingAnimation
-										roles={[
-											"MERN Stack Developer",
-											"Java Full Stack Developer",
-											"DevOps Developer"
-										]}
+						<div className="homepage-split">
+							<div className="homepage-col homepage-col--copy">
+								<header className="homepage-hero">
+									<p className="homepage-kicker">Home</p>
+									<p className="homepage-name">{INFO.main.name}</p>
+									<div className="title homepage-title homepage-hero-title">
+										<TypingAnimation
+											roles={[
+												"MERN Stack Developer",
+												"Java Full Stack Developer",
+												"DevOps Developer",
+											]}
+										/>
+									</div>
+									<div
+										className="subtitle homepage-subtitle homepage-hero-desc"
+										dangerouslySetInnerHTML={{ __html: INFO.homepage.description }}
 									/>
-								</div>
+								</header>
 
-								<div
-									className="subtitle homepage-subtitle"
-									dangerouslySetInnerHTML={{ __html: INFO.homepage.description }}
-								></div>
+								<div className="homepage-socials homepage-socials-bar">
+									<a
+										href={INFO.socials.github}
+										target="_blank"
+										rel="noreferrer"
+										className="social-link"
+										title="GitHub Profile"
+									>
+										<FontAwesomeIcon icon={faGithub} className="homepage-social-icon" />
+									</a>
+									<a
+										href={INFO.socials.linkedin}
+										target="_blank"
+										rel="noreferrer"
+										className="social-link"
+										title="LinkedIn Profile"
+									>
+										<FontAwesomeIcon icon={faLinkedinIn} className="homepage-social-icon" />
+									</a>
+									<a
+										href={`mailto:${INFO.main.email}`}
+										target="_blank"
+										rel="noreferrer"
+										className="social-link"
+										title="Send Email"
+									>
+										<FontAwesomeIcon className="homepage-social-icon" icon={faMailBulk} />
+									</a>
+									{INFO.main.phone ? (
+										<a
+											href={`tel:${String(INFO.main.phone).replace(/\s/g, "")}`}
+											className="social-link"
+											title="Call"
+										>
+											<FontAwesomeIcon icon={faPhone} className="homepage-social-icon" />
+										</a>
+									) : null}
+									<a
+										href="https://leetcode.com/u/sudhanssudhan83/"
+										target="_blank"
+										rel="noreferrer"
+										className="social-link"
+										title="LeetCode Profile"
+									>
+										<LeetCodeIcon className="homepage-social-icon" />
+									</a>
+									<a
+										href="https://www.geeksforgeeks.org/user/sudhanss4b9x/"
+										target="_blank"
+										rel="noreferrer"
+										className="social-link"
+										title="GeeksforGeeks Profile"
+									>
+										<GeeksForGeeksIcon className="homepage-social-icon" />
+									</a>
+									<a
+										href={INFO.socials.dockerhub}
+										target="_blank"
+										rel="noreferrer"
+										className="social-link"
+										title="Docker Hub Profile"
+									>
+										<FontAwesomeIcon icon={faDocker} className="homepage-social-icon" />
+									</a>
+								</div>
 							</div>
 
-							<div className="homepage-first-area-right-side">
-								<div className="homepage-image-container">
-									<div className="homepage-image-wrapper">
+							<div className="homepage-col homepage-col--visual">
+								<div className="homepage-photo-card">
+									<div className="homepage-photo-inner">
 										<img
 											src="IMG_20250125_221514~2.jpg"
-											alt="about"
+											alt={INFO.main.name}
 											className="homepage-image"
 										/>
 									</div>
 								</div>
 							</div>
-						</div>
-
-						<div className="homepage-socials">
-							<a
-								href={INFO.socials.github}
-								target="_blank"
-								rel="noreferrer"
-								className="social-link"
-								title="GitHub Profile"
-							>
-								<FontAwesomeIcon
-									icon={faGithub}
-									className="homepage-social-icon"
-								/>
-							</a>
-							<a
-								href={INFO.socials.linkedin}
-								target="_blank"
-								rel="noreferrer"
-								className="social-link"
-								title="LinkedIn Profile"
-							>
-								<FontAwesomeIcon
-									icon={faLinkedinIn}
-									className="homepage-social-icon"
-								/>
-							</a>
-							<a
-								href={`mailto:${INFO.main.email}`}
-								target="_blank"
-								rel="noreferrer"
-								className="social-link"
-								title="Send Email"
-							>
-								<FontAwesomeIcon
-									className="homepage-social-icon"
-									icon={faMailBulk}
-								/>
-							</a>
-							<a
-								href="https://leetcode.com/u/sudhanssudhan83/"
-								target="_blank"
-								rel="noreferrer"
-								className="social-link"
-								title="LeetCode Profile"
-							>
-								<LeetCodeIcon className="homepage-social-icon" />
-							</a>
-							<a
-								href="https://www.geeksforgeeks.org/user/sudhanss4b9x/"
-								target="_blank"
-								rel="noreferrer"
-								className="social-link"
-								title="GeeksforGeeks Profile"
-							>
-								<GeeksForGeeksIcon className="homepage-social-icon" />
-							</a>
-							<a
-								href={INFO.socials.dockerhub}
-								target="_blank"
-								rel="noreferrer"
-								className="social-link"
-								title="Docker Hub Profile"
-							>
-								<FontAwesomeIcon
-									icon={faDocker}
-									className="homepage-social-icon"
-								/>
-							</a>
 						</div>
 
 						<div className="page-footer">

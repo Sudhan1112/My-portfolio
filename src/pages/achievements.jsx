@@ -58,23 +58,81 @@ function SmartImage({ src, alt, className, onActivate }) {
 	);
 }
 
-function SnapshotSlideshow({ imageSources, title, onOpen }) {
+function SnapshotSlideshow({ imageSources, title, onOpen, autoplayPaused, autoplayOffsetMs }) {
 	const [activeIndex, setActiveIndex] = useState(0);
+	const [visible, setVisible] = useState(true);
+	const fadeTimeoutRef = useRef(null);
 	const total = imageSources.length;
 	const canSlide = total > 1;
 	const activeSrc = imageSources[activeIndex];
 
+	const changeTo = useCallback((newIndex) => {
+		if (fadeTimeoutRef.current) {
+			clearTimeout(fadeTimeoutRef.current);
+			fadeTimeoutRef.current = null;
+		}
+		setVisible(false);
+		fadeTimeoutRef.current = setTimeout(() => {
+			setActiveIndex(newIndex);
+			setVisible(true);
+			fadeTimeoutRef.current = null;
+		}, 220);
+	}, []);
+
 	const goPrev = useCallback(() => {
-		setActiveIndex((prev) => (prev - 1 + total) % total);
-	}, [total]);
+		changeTo((activeIndex - 1 + total) % total);
+	}, [activeIndex, total, changeTo]);
 
 	const goNext = useCallback(() => {
-		setActiveIndex((prev) => (prev + 1) % total);
-	}, [total]);
+		changeTo((activeIndex + 1) % total);
+	}, [activeIndex, total, changeTo]);
 
 	useEffect(() => {
 		setActiveIndex(0);
+		setVisible(true);
 	}, [title]);
+
+	useEffect(() => {
+		if (!canSlide || autoplayPaused) return;
+		let intervalId;
+		let startDelayId;
+
+		const tick = () => {
+			if (fadeTimeoutRef.current) {
+				clearTimeout(fadeTimeoutRef.current);
+				fadeTimeoutRef.current = null;
+			}
+			setVisible(false);
+			fadeTimeoutRef.current = setTimeout(() => {
+				setActiveIndex((prev) => (prev + 1) % total);
+				setVisible(true);
+				fadeTimeoutRef.current = null;
+			}, 220);
+		};
+
+		startDelayId = setTimeout(() => {
+			intervalId = setInterval(tick, 3000);
+		}, autoplayOffsetMs ?? 0);
+
+		return () => {
+			clearTimeout(startDelayId);
+			clearInterval(intervalId);
+			if (fadeTimeoutRef.current) {
+				clearTimeout(fadeTimeoutRef.current);
+				fadeTimeoutRef.current = null;
+			}
+		};
+	}, [canSlide, total, autoplayPaused, autoplayOffsetMs]);
+
+	useEffect(
+		() => () => {
+			if (fadeTimeoutRef.current) {
+				clearTimeout(fadeTimeoutRef.current);
+				fadeTimeoutRef.current = null;
+			}
+		},
+		[]
+	);
 
 	if (!total) {
 		return null;
@@ -86,41 +144,45 @@ function SnapshotSlideshow({ imageSources, title, onOpen }) {
 				<SmartImage
 					src={activeSrc}
 					alt={`${title} preview ${activeIndex + 1}`}
-					className="snapshot-card-image"
-					onActivate={() => onOpen(activeSrc, `${title} preview ${activeIndex + 1}`)}
+					className={`snapshot-card-image ${visible ? "slide-visible" : "slide-hidden"}`}
+					onActivate={() =>
+						onOpen({
+							sources: imageSources,
+							index: activeIndex,
+							captionTitle: title,
+						})
+					}
 				/>
-				{canSlide && (
-					<div className="snapshot-slideshow-controls">
-						<button
-							type="button"
-							className="snapshot-nav-btn"
-							onClick={goPrev}
-							aria-label="Previous slide"
-						>
-							‹
-						</button>
-						<button
-							type="button"
-							className="snapshot-nav-btn"
-							onClick={goNext}
-							aria-label="Next slide"
-						>
-							›
-						</button>
-					</div>
-				)}
 			</div>
 			{canSlide && (
-				<div className="snapshot-dots" role="tablist" aria-label={`${title} image slides`}>
-					{imageSources.map((src, idx) => (
-						<button
-							key={`${src}-${idx}`}
-							type="button"
-							className={`snapshot-dot ${idx === activeIndex ? "active" : ""}`}
-							onClick={() => setActiveIndex(idx)}
-							aria-label={`Go to slide ${idx + 1}`}
-						/>
-					))}
+				<div className="snapshot-controls-row">
+					<button
+						type="button"
+						className="snapshot-nav-btn"
+						onClick={goPrev}
+						aria-label="Previous slide"
+					>
+						‹
+					</button>
+					<div className="snapshot-dots" role="tablist" aria-label={`${title} image slides`}>
+						{imageSources.map((src, idx) => (
+							<button
+								key={`${src}-${idx}`}
+								type="button"
+								className={`snapshot-dot ${idx === activeIndex ? "active" : ""}`}
+								onClick={() => changeTo(idx)}
+								aria-label={`Go to slide ${idx + 1}`}
+							/>
+						))}
+					</div>
+					<button
+						type="button"
+						className="snapshot-nav-btn"
+						onClick={goNext}
+						aria-label="Next slide"
+					>
+						›
+					</button>
 				</div>
 			)}
 		</div>
@@ -129,18 +191,65 @@ function SnapshotSlideshow({ imageSources, title, onOpen }) {
 
 const Achievements = () => {
 	const [visibleItems, setVisibleItems] = useState(new Set());
-	const [lightbox, setLightbox] = useState({ open: false, src: "", alt: "" });
+	const [lightbox, setLightbox] = useState({
+		open: false,
+		sources: [],
+		index: 0,
+		captionTitle: "",
+	});
 	const timelineRefs = useRef([]);
 	const observerRef = useRef(null);
 
-	const openLightbox = useCallback((src, alt) => {
-		if (!src) return;
-		setLightbox({ open: true, src, alt });
+	const openLightbox = useCallback((arg1, arg2) => {
+		let sources;
+		let index = 0;
+		let captionTitle = "";
+		if (arg1 && typeof arg1 === "object" && Array.isArray(arg1.sources)) {
+			sources = arg1.sources.filter(Boolean);
+			captionTitle = arg1.captionTitle ?? "";
+			index = Math.min(Math.max(0, arg1.index ?? 0), Math.max(0, sources.length - 1));
+		} else if (typeof arg1 === "string" && arg1) {
+			sources = [arg1];
+			captionTitle = typeof arg2 === "string" ? arg2 : "";
+		} else {
+			return;
+		}
+		if (!sources.length) return;
+		setLightbox({ open: true, sources, index, captionTitle });
 	}, []);
 
 	const closeLightbox = useCallback(() => {
 		setLightbox((s) => ({ ...s, open: false }));
 	}, []);
+
+	const lightboxStep = useCallback((delta) => {
+		setLightbox((s) => {
+			const n = s.sources?.length ?? 0;
+			if (n < 2) return s;
+			const next = (s.index + delta + n) % n;
+			return { ...s, index: next };
+		});
+	}, []);
+
+	const lightboxSetIndex = useCallback((i) => {
+		setLightbox((s) => {
+			const n = s.sources?.length ?? 0;
+			if (!n) return s;
+			const next = Math.min(Math.max(0, i), n - 1);
+			return { ...s, index: next };
+		});
+	}, []);
+
+	useEffect(() => {
+		if (!lightbox.open) return;
+		const onKey = (e) => {
+			if (e.key === "Escape") closeLightbox();
+			if (e.key === "ArrowLeft") lightboxStep(-1);
+			if (e.key === "ArrowRight") lightboxStep(1);
+		};
+		window.addEventListener("keydown", onKey);
+		return () => window.removeEventListener("keydown", onKey);
+	}, [lightbox.open, closeLightbox, lightboxStep]);
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -338,6 +447,8 @@ const Achievements = () => {
 													imageSources={imageSources}
 													title={w.title}
 													onOpen={openLightbox}
+													autoplayPaused={lightbox.open}
+													autoplayOffsetMs={index * 650}
 												/>
 											</div>
 										</article>
@@ -362,8 +473,67 @@ const Achievements = () => {
 
 					<Modal open={lightbox.open} onClose={closeLightbox}>
 						<div className="achievements-lightbox-inner">
-							<img src={lightbox.src} alt={lightbox.alt} className="achievements-lightbox-img" />
-							<p className="achievements-lightbox-caption">{lightbox.alt}</p>
+							<div className="achievements-lightbox-stage">
+								<img
+									key={lightbox.sources[lightbox.index]}
+									src={lightbox.sources[lightbox.index]}
+									alt={
+										lightbox.sources.length > 1
+											? `${lightbox.captionTitle} — image ${lightbox.index + 1} of ${lightbox.sources.length}`
+											: lightbox.captionTitle
+									}
+									className="achievements-lightbox-img"
+								/>
+							</div>
+							{lightbox.sources.length > 1 && (
+								<div className="achievements-lightbox-controls-row">
+									<button
+										type="button"
+										className="snapshot-nav-btn"
+										onClick={(e) => {
+											e.stopPropagation();
+											lightboxStep(-1);
+										}}
+										aria-label="Previous image"
+									>
+										‹
+									</button>
+									<div
+										className="snapshot-dots"
+										role="tablist"
+										aria-label="Image gallery"
+									>
+										{lightbox.sources.map((src, idx) => (
+											<button
+												key={`lb-${src}-${idx}`}
+												type="button"
+												className={`snapshot-dot ${idx === lightbox.index ? "active" : ""}`}
+												onClick={(e) => {
+													e.stopPropagation();
+													lightboxSetIndex(idx);
+												}}
+												aria-label={`Go to image ${idx + 1}`}
+											/>
+										))}
+									</div>
+									<button
+										type="button"
+										className="snapshot-nav-btn"
+										onClick={(e) => {
+											e.stopPropagation();
+											lightboxStep(1);
+										}}
+										aria-label="Next image"
+									>
+										›
+									</button>
+								</div>
+							)}
+							<p className="achievements-lightbox-caption">
+								{lightbox.sources.length > 1
+									? `${lightbox.captionTitle} · Image ${lightbox.index + 1} of ${lightbox.sources.length}`
+									: lightbox.captionTitle}
+							</p>
 						</div>
 					</Modal>
 

@@ -11,6 +11,71 @@ import SEO from "../data/Seo";
 
 import "./styles/about.css";
 
+const WHAT_I_DO = [
+	"Build full-stack apps with React / Next.js and Spring Boot / Node.js",
+	"Ship secure REST APIs with JWT, RBAC, and BCrypt",
+	"Model data in PostgreSQL, MongoDB, and Redis for scale",
+	"Containerize services with Docker and Docker Compose",
+	"Polish UI with Tailwind CSS and responsive layouts",
+];
+
+const SKILL_GROUPS = [
+	{
+		title: "System design",
+		tags: [
+			"System design",
+			"Design patterns",
+			"Microservices",
+			"OOP",
+			"DSA",
+		],
+	},
+	{
+		title: "UI / UX",
+		tags: ["Figma", "Adobe XD", "Canva", "Wireframing", "Prototyping", "Responsive layout"],
+	},
+	{
+		title: "Frontend",
+		tags: ["React", "Next.js", "JavaScript", "HTML5", "CSS3", "Tailwind", "Bootstrap"],
+	},
+	{
+		title: "Backend",
+		tags: [
+			"Java",
+			"Python",
+			"C++",
+			"Spring Boot",
+			"Node.js",
+			"Express",
+			"Spring MVC",
+			"JPA / Hibernate",
+			"REST APIs",
+			"Spring Security",
+			"Multithreading",
+		],
+	},
+	{
+		title: "Data",
+		tags: ["MongoDB", "MySQL", "PostgreSQL", "Redis", "JDBC"],
+	},
+	{
+		title: "Integration",
+		tags: ["REST", "Microservices", "Postman", "Swagger"],
+	},
+	{
+		title: "Testing",
+		tags: ["JUnit", "Mockito", "Exception handling", "Postman"],
+	},
+	{
+		title: "DevOps",
+		tags: ["Docker", "Docker Compose", "Git / GitHub", "Maven / Gradle", "CI/CD"],
+	},
+	{
+		title: "Hosting",
+		tags: ["Render", "Vercel", "AWS", "Docker"],
+	},
+];
+
 const About = () => {
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -23,172 +88,125 @@ const About = () => {
 			<Helmet>
 				<title>{`About | ${INFO.main.title}`}</title>
 				<meta name="description" content={currentSEO.description} />
-				<meta
-					name="keywords"
-					content={currentSEO.keywords.join(", ")}
-				/>
+				<meta name="keywords" content={currentSEO.keywords.join(", ")} />
 			</Helmet>
 
-			<div className="page-content">
+			<div className="page-content about-page">
 				<NavBar active="about" />
-				<div className="content-wrapper">
+				<div className="content-wrapper about-page-inner">
 					<div className="about-logo-container">
 						<div className="about-logo">
 							<Logo width={46} />
 						</div>
 					</div>
 
-					<div className="about-container">
-						<div className="about-main">
-							<div className="about-right-side">
-								<div className="title about-title">
-									{INFO.about.title}
+					<header className="about-hero">
+						<p className="about-hero-kicker">About</p>
+						<h1 className="about-hero-title">{INFO.about.title}</h1>
+						<p className="about-hero-lead">
+							Focused on fast, secure, and scalable systems — from API design to polished UI.
+						</p>
+					</header>
+
+					<div className="about-layout">
+						<aside className="about-aside" aria-label="Profile and links">
+							<div className="about-profile-card">
+								<div className="about-profile-frame">
+									<img src="about.jpg" alt={INFO.main.name} className="about-profile-img" />
 								</div>
-
-								{/* Directly adding descriptions with appropriate HTML tags */}
-								<div className="subtitle about-subtitle">
-									<p>
-										I'm a <strong>full-stack</strong> and <strong>Java backend developer</strong> who builds
-										<strong> fast</strong>, <strong>secure</strong>, and <strong>scalable</strong> applications.
-										I work with <strong>React.js</strong>, <strong>Next.js</strong>, <strong>Spring Boot</strong>,
-										<strong>Node.js</strong>, and databases like <strong>PostgreSQL</strong>,
-										<strong>MongoDB</strong>, <strong>MySQL</strong>, and <strong>Redis</strong>.
-									</p>
-
-									<p>
-										I enjoy turning real problems into <strong>clean</strong>, <strong>efficient</strong>, and
-										<strong>production-ready software</strong>.
-									</p>
-								</div>
-
-								<div className="subtitle about-subtitle">
-									<h2>What I Do</h2>
-
-									✔ <strong>Build full-stack apps</strong> with React/Next.js & Spring Boot/Node.js <br />
-									✔ Create <strong>secure REST APIs</strong> with JWT, RBAC & BCrypt <br />
-									✔ Design <strong>scalable PostgreSQL & MongoDB databases</strong> <br />
-									✔ Containerize apps using <strong>Docker & Docker Compose</strong> <br />
-									✔ Build responsive UI with <strong>Tailwind CSS</strong> <br />
-								</div>
-
-								<div className="subtitle about-subtitle">
-									<h2>Technical Skills</h2>
-
-									<div className="skills-phases">
-										<div className="phase-item">
-											<span className="phase-number">1.</span>
-											<span className="phase-title">System Design</span>
-											<span className="phase-separator">—</span>
-											<span className="phase-skills">
-												<strong>System Design</strong>, <strong>Design Patterns</strong>, <strong>Microservices Architecture</strong>, <strong>OOP</strong>, <strong>Data Structures & Algorithms</strong>
-											</span>
-										</div>
-
-										<div className="phase-item">
-											<span className="phase-number">2.</span>
-											<span className="phase-title">UI/UX Prototyping</span>
-											<span className="phase-separator">—</span>
-											<span className="phase-skills">
-												<strong>Figma</strong>, <strong>Adobe XD</strong>, <strong>Canva</strong>, <strong>Wireframing</strong>, <strong>Prototyping</strong>, <strong>Responsive Layout Design</strong>
-											</span>
-										</div>
-
-										<div className="phase-item">
-											<span className="phase-number">3.</span>
-											<span className="phase-title">Frontend Development</span>
-											<span className="phase-separator">—</span>
-											<span className="phase-skills">
-												<strong>React.js</strong>, <strong>Next.js</strong>, <strong>JavaScript</strong>, <strong>HTML5</strong>, <strong>CSS3</strong>, <strong>Tailwind CSS</strong>, <strong>Bootstrap</strong>
-											</span>
-										</div>
-
-										<div className="phase-item">
-											<span className="phase-number">4.</span>
-											<span className="phase-title">Backend Development</span>
-											<span className="phase-separator">—</span>
-											<span className="phase-skills">
-												<strong>Java</strong>, <strong>Python</strong>, <strong>C++</strong>, <strong>Spring Boot</strong>, <strong>Node.js</strong>, <strong>Express.js</strong>, <strong>Spring MVC</strong>, <strong>Spring Data JPA</strong>, <strong>Hibernate ORM</strong>, <strong>RESTful APIs</strong>, <strong>Spring Security</strong>, <strong>Multithreading</strong>
-											</span>
-										</div>
-
-										<div className="phase-item">
-											<span className="phase-number">5.</span>
-											<span className="phase-title">Database</span>
-											<span className="phase-separator">—</span>
-											<span className="phase-skills">
-												<strong>MongoDB</strong>, <strong>MySQL</strong>, <strong>PostgreSQL</strong>, <strong>Redis</strong>, <strong>JDBC</strong>
-											</span>
-										</div>
-
-										<div className="phase-item">
-											<span className="phase-number">6.</span>
-											<span className="phase-title">Integration</span>
-											<span className="phase-separator">—</span>
-											<span className="phase-skills">
-												<strong>RESTful APIs</strong>, <strong>Microservices</strong>, <strong>Spring Boot</strong>, <strong>Express.js</strong>, <strong>Postman</strong>, <strong>Swagger</strong>
-											</span>
-										</div>
-
-										<div className="phase-item">
-											<span className="phase-number">7.</span>
-											<span className="phase-title">Testing</span>
-											<span className="phase-separator">—</span>
-											<span className="phase-skills">
-												<strong>JUnit</strong>, <strong>Mockito</strong>, <strong>Exception Handling</strong>, <strong>Postman</strong>
-											</span>
-										</div>
-
-										<div className="phase-item">
-											<span className="phase-number">8.</span>
-											<span className="phase-title">DevOps</span>
-											<span className="phase-separator">—</span>
-											<span className="phase-skills">
-												<strong>Docker</strong>, <strong>Docker Compose</strong>, <strong>Git & GitHub</strong>, <strong>Maven/Gradle</strong>, <strong>CI/CD</strong>
-											</span>
-										</div>
-
-										<div className="phase-item">
-											<span className="phase-number">9.</span>
-											<span className="phase-title">Deployment & Hosting</span>
-											<span className="phase-separator">—</span>
-											<span className="phase-skills">
-												<strong>Render</strong>, <strong>Vercel</strong>, <strong>AWS</strong>, <strong>Docker</strong>
-											</span>
-										</div>
-									</div>
-								</div>
-
-								<div className="subtitle about-subtitle">
-									<h2>How I Work</h2>
-									<p>
-										I follow <strong>clean architecture</strong>, write <strong>maintainable code</strong>, and
-										build systems with <strong>performance</strong> and <strong>security</strong> as top priorities.
-									</p>
-									<p>
-										<strong>Always learning. Always improving. Always shipping meaningful work.</strong>
-									</p>
-								</div>
-
-
+								<p className="about-profile-caption">{INFO.main.name}</p>
 							</div>
-
-							<div className="about-left-side">
-								<div className="about-image-container">
-									<div className="about-image-wrapper">
-										<img
-											src="about.jpg"
-											alt="about"
-											className="about-image"
-										/>
-									</div>
-								</div>
-
-								<div className="about-socials">
-									<Socials />
-								</div>
+							<div className="about-social-card">
+								<h2 className="about-card-heading">Connect</h2>
+								<Socials />
 							</div>
+						</aside>
+
+						<div className="about-main-col">
+							<section className="about-section-card" aria-labelledby="intro-heading">
+								<h2 id="intro-heading" className="about-section-title">
+									Intro
+								</h2>
+								<div className="about-prose">
+									<p>
+										I build with <strong>React</strong>, <strong>Next.js</strong>,{" "}
+										<strong>Spring Boot</strong>, <strong>Node.js</strong>, and databases
+										including <strong>PostgreSQL</strong>, <strong>MongoDB</strong>,{" "}
+										<strong>MySQL</strong>, and <strong>Redis</strong>.
+									</p>
+									<p>
+										I enjoy turning real problems into <strong>clean</strong>,{" "}
+										<strong>efficient</strong>, and <strong>production-ready</strong> software.
+									</p>
+								</div>
+							</section>
+
+							<section className="about-section-card" aria-labelledby="what-heading">
+								<h2 id="what-heading" className="about-section-title">
+									What I do
+								</h2>
+								<ul className="about-do-list">
+									{WHAT_I_DO.map((line) => (
+										<li key={line} className="about-do-item">
+											<span className="about-do-icon" aria-hidden>
+												<svg viewBox="0 0 20 20" width="18" height="18" fill="none">
+													<circle cx="10" cy="10" r="9" stroke="currentColor" strokeWidth="1.2" />
+													<path
+														d="M6 10.2l2.5 2.3L14 7.5"
+														stroke="currentColor"
+														strokeWidth="1.4"
+														strokeLinecap="round"
+														strokeLinejoin="round"
+													/>
+												</svg>
+											</span>
+											<span>{line}</span>
+										</li>
+									))}
+								</ul>
+							</section>
+
+							<section className="about-section-card" aria-labelledby="skills-heading">
+								<h2 id="skills-heading" className="about-section-title">
+									Technical skills
+								</h2>
+								<p className="about-section-lead">
+									Grouped by area — tap-friendly chips on small screens.
+								</p>
+								<div className="about-skill-grid">
+									{SKILL_GROUPS.map((group) => (
+										<article key={group.title} className="about-skill-card">
+											<h3 className="about-skill-card-title">{group.title}</h3>
+											<div className="about-skill-tags">
+												{group.tags.map((tag) => (
+													<span key={tag} className="about-skill-chip">
+														{tag}
+													</span>
+												))}
+											</div>
+										</article>
+									))}
+								</div>
+							</section>
+
+							<section className="about-section-card about-section-card--accent" aria-labelledby="work-heading">
+								<h2 id="work-heading" className="about-section-title">
+									How I work
+								</h2>
+								<div className="about-prose">
+									<p>
+										I follow <strong>clean architecture</strong>, write{" "}
+										<strong>maintainable code</strong>, and prioritize{" "}
+										<strong>performance</strong> and <strong>security</strong>.
+									</p>
+									<p className="about-pullquote">
+										Always learning. Always improving. Always shipping meaningful work.
+									</p>
+								</div>
+							</section>
 						</div>
 					</div>
+
 					<div className="page-footer">
 						<Footer />
 					</div>

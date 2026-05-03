@@ -5,8 +5,22 @@ export const ACHIEVEMENT_IMAGE_FILES = {
 	scrimbaTs: "/achievements/typescript certificate.png",
 	scrimbaNext: "/achievements/Next JS certificate.png",
 	lumina: "/achievements/Lumina write.png",
+	lumina1: "/achievements/Lumina write1.png",
+	lumina2: "/achievements/Lumina write2.png",
+	lumina3: "/achievements/Lumina write3.png",
+	lumina4: "/achievements/Lumina write4.png",
+	lumina5: "/achievements/Lumina write5.png",
+	luminaL: "/achievements/L.png",
 	athMain: "/achievements/ATH.png",
 	athSecondary: "/achievements/ATH (2).png",
+	ath3: "/achievements/ATH 3.png",
+	ath4: "/achievements/ATH 4.png",
+	ath5: "/achievements/ATH 5.png",
+	ath6: "/achievements/ATH 6.png",
+	ath7: "/achievements/ATH 7.png",
+	ath8: "/achievements/ATH 8.png",
+	ath9: "/achievements/ATH 9.png",
+	ath10: "/achievements/ATH 10.png",
 };
 
 export const HACKATHONS = [
@@ -77,13 +91,13 @@ export const WORK_SNAPSHOTS = [
 		title: "Lumina Write",
 		subtitle: "Real-time collaborative editor · HCL–GUVI 2026",
 		desc: "Login and workspace preview from the Google Docs–style editor built with CRDT sync, live cursors, and role-based access.",
-		imageKeys: ["lumina"],
+		imageKeys: ["lumina", "lumina1", "lumina2", "lumina3", "lumina4", "lumina5", "luminaL"],
 	},
 	{
 		title: "ATH · Sales intelligence platform",
 		subtitle: "AI-powered sales intelligence platform",
 		desc: "Performance dashboard and ticket repository views grouped in a single slideshow container for the ATH project preview.",
-		imageKeys: ["athMain", "athSecondary"],
+		imageKeys: ["athMain", "athSecondary", "ath3", "ath4", "ath5", "ath6", "ath7", "ath8", "ath9", "ath10"],
 	},
 ];
 

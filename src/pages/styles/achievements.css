@@ -425,6 +425,15 @@
 	display: block;
 	width: 100%;
 	height: auto;
+	transition: opacity 0.25s ease;
+}
+
+.snapshot-card-image.slide-visible {
+	opacity: 1;
+}
+
+.snapshot-card-image.slide-hidden {
+	opacity: 0;
 }
 
 .snapshot-slideshow {
@@ -440,10 +449,15 @@
 }
 
 .snapshot-slideshow-controls {
-	position: absolute;
-	inset: auto 10px 10px auto;
+	display: none;
+}
+
+.snapshot-controls-row {
 	display: flex;
-	gap: 8px;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	padding: 6px 0 2px;
 }
 
 .snapshot-nav-btn {
@@ -467,22 +481,44 @@
 
 .snapshot-dots {
 	display: flex;
+	align-items: center;
 	justify-content: center;
-	gap: 8px;
+	gap: 6px;
+	flex-wrap: wrap;
 }
 
 .snapshot-dot {
 	width: 8px;
 	height: 8px;
+	min-width: 8px;
+	min-height: 8px;
+	padding: 0;
 	border-radius: 50%;
 	border: none;
 	background: var(--border-color);
 	cursor: pointer;
+	box-sizing: content-box;
+	flex-shrink: 0;
+	line-height: 1;
 }
 
 .snapshot-dot.active {
 	background: var(--link-color);
-	transform: scale(1.15);
+	width: 10px;
+	height: 10px;
+	min-width: 10px;
+	min-height: 10px;
+	animation: snapshot-dot-pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes snapshot-dot-pulse {
+	0%,
+	100% {
+		box-shadow: 0 0 0 0 color-mix(in hsl, var(--link-color) 40%, transparent);
+	}
+	50% {
+		box-shadow: 0 0 0 5px color-mix(in hsl, var(--link-color) 12%, transparent);
+	}
 }
 
 /* ----- Strength pills ----- */
@@ -585,6 +621,11 @@
 	padding: 20px 20px 16px;
 }
 
+.achievements-lightbox-stage {
+	border-radius: 12px;
+	overflow: hidden;
+}
+
 .achievements-lightbox-img {
 	display: block;
 	width: 100%;
@@ -592,6 +633,25 @@
 	max-height: min(78vh, 820px);
 	object-fit: contain;
 	border-radius: 12px;
+	animation: achievements-lightbox-fade-in 0.28s ease;
+}
+
+@keyframes achievements-lightbox-fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.achievements-lightbox-controls-row {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	padding: 12px 0 4px;
+	flex-wrap: wrap;
 }
 
 .achievements-lightbox-caption {

@@ -3,6 +3,8 @@ const INFO = {
 		title: "Portfolio by Sudhan",
 		name: "Sudhan.S",
 		email: "sudhanssudhan83@gmail.com",
+		/** Edit to your real number (shown on Contact + optional homepage link) */
+		phone: "+91 9952921138",
 		logo: "../logo.png",
 	},
 

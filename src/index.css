@@ -6,13 +6,26 @@
   box-sizing: border-box;
 }
 
+html {
+  width: 100%;
+  max-width: 100%;
+}
+
 body {
   margin: 0;
+  width: 100%;
+  max-width: 100%;
   font-family: var(--primary-font);
   background: var(--background);
   color: var(--primary-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
 }
 
 code {
