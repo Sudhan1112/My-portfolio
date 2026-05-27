@@ -203,7 +203,7 @@ const Homepage = () => {
 								<div className="homepage-photo-card">
 									<div className="homepage-photo-inner">
 										<img
-											src="IMG_20250125_221514~2.jpg"
+											src="WhatsApp Image 2026-05-26 at 11.56.44 PM.jpeg"
 											alt={INFO.main.name}
 											className="homepage-image"
 										/>

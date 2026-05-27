@@ -94,7 +94,7 @@
 
 @media (max-width: 600px) {
 	.projects-container {
-		padding-top: 60px;
+		padding-top: 16px;
 	}
 
 	.projects-hero {
@@ -102,6 +102,22 @@
 		border-radius: 18px;
 	}
 
+	.projects-highlights {
+		grid-template-columns: 1fr 1fr;
+		gap: 10px;
+	}
+
+	.projects-title {
+		font-size: clamp(1.2rem, 6.5vw, 1.55rem);
+	}
+
+	.projects-subtitle {
+		font-size: 0.88rem;
+		margin-top: 10px;
+	}
+}
+
+@media (max-width: 400px) {
 	.projects-highlights {
 		grid-template-columns: 1fr;
 	}

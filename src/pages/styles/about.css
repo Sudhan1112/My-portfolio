@@ -345,8 +345,34 @@
 	}
 }
 
+@media (max-width: 600px) {
+	.about-hero {
+		padding-top: 20px;
+	}
+
+	.about-hero-title {
+		font-size: clamp(1.25rem, 6.5vw, 1.65rem);
+	}
+
+	.about-hero-lead {
+		font-size: 0.92rem;
+	}
+
+	.about-section-card {
+		padding: 16px;
+	}
+
+	.about-profile-card {
+		padding: 14px;
+	}
+}
+
 @media (max-width: 480px) {
 	.about-hero {
-		padding-top: 72px;
+		padding-top: 12px;
+	}
+
+	.about-skill-grid {
+		grid-template-columns: 1fr;
 	}
 }

@@ -366,17 +366,78 @@
 	}
 }
 
+/* ========================================
+   MOBILE  ≤600px  (bottom tab bar layout)
+   ======================================== */
 @media (max-width: 600px) {
-	.homepage-container {
-		padding-top: 18px;
+	/* No sticky top logo on mobile — the floating logo is hidden by homepage */
+	.homepage-logo-container {
+		padding-top: 24px; /* minimal breathing room at top */
 	}
 
-	.homepage-hero-title {
-		font-size: 1.55rem;
+	.homepage-container {
+		padding-top: 12px;
+	}
+
+	.homepage-split {
+		gap: 20px;
+		margin-top: 12px;
+	}
+
+	/* Photo shows above text on mobile */
+	.homepage-col--visual {
+		order: -1;
 	}
 
 	.homepage-photo-card {
-		max-width: 280px;
+		max-width: 200px;
+	}
+
+	.homepage-hero-title {
+		font-size: clamp(1.35rem, 7vw, 1.6rem);
+	}
+
+	.homepage-hero-desc {
+		font-size: 14px !important;
+		line-height: 1.6 !important;
+		margin-top: 10px !important;
+	}
+
+	.homepage-name {
+		font-size: 0.95rem;
+	}
+
+	.homepage-kicker {
+		font-size: 0.7rem;
+	}
+
+	/* Socials bar: wraps neatly */
+	.homepage-socials-bar {
+		padding: 8px 10px;
+		margin-top: 6px;
+		gap: 4px;
+	}
+
+	.social-link {
+		padding: 8px;
+	}
+
+	.homepage-social-icon {
+		font-size: 18px;
+	}
+}
+
+@media (max-width: 400px) {
+	.homepage-photo-card {
+		max-width: 160px;
+	}
+
+	.homepage-hero-title {
+		font-size: clamp(1.2rem, 8vw, 1.45rem);
+	}
+
+	.homepage-socials {
+		gap: 4px;
 	}
 }
 

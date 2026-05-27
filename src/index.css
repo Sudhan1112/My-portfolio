@@ -15,11 +15,16 @@ body {
   margin: 0;
   width: 100%;
   max-width: 100%;
+  overflow-x: hidden;
   font-family: var(--primary-font);
   background: var(--background);
   color: var(--primary-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Smooth momentum scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
+  /* Prevent pull-to-refresh on Chrome mobile */
+  overscroll-behavior-y: contain;
 }
 
 #root {

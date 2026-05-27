@@ -707,11 +707,12 @@
 
 @media (max-width: 600px) {
 	.achievements-title {
-		margin-top: 60px;
+		margin-top: 20px;
 	}
 
 	.achievements-subtitle {
 		margin-bottom: 24px;
+		font-size: 0.9rem;
 	}
 
 	.achievements-section {
@@ -725,14 +726,26 @@
 	.snapshot-card--featured {
 		box-shadow: none;
 	}
+
+	.recognition-spotlight-body {
+		padding: 16px;
+	}
+
+	.cert-row {
+		padding: 16px 14px;
+	}
 }
 
 @media (max-width: 480px) {
 	.achievements-title {
-		margin-top: 50px;
+		margin-top: 12px;
 	}
 
 	.cert-row {
-		padding: 18px 16px;
+		padding: 14px 12px;
+	}
+
+	.snapshot-card {
+		padding: 16px 14px;
 	}
 }

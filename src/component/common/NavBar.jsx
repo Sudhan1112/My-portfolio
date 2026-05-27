@@ -191,7 +191,7 @@ const NavBar = (props) => {
 								data-title="Achievements"
 							>
 								<FontAwesomeIcon icon={faTrophy} />
-								<span>Achievements</span>
+								<span>Awards</span>
 							</Link>
 
 							<Link

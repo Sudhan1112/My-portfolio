@@ -244,8 +244,32 @@
 	}
 }
 
+@media (max-width: 600px) {
+	.contact-hero {
+		padding-top: 20px;
+	}
+
+	.contact-hero-title {
+		font-size: clamp(1.3rem, 7vw, 1.75rem);
+	}
+
+	.contact-hero-lead {
+		font-size: 0.92rem;
+	}
+
+	.contact-panel {
+		margin-top: 24px;
+		padding: 16px;
+	}
+
+	.contact-cta {
+		padding: 14px 16px;
+		min-height: 80px;
+	}
+}
+
 @media (max-width: 480px) {
 	.contact-hero {
-		padding-top: 72px;
+		padding-top: 12px;
 	}
 }
