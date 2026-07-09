@@ -36,6 +36,38 @@ const INFO = {
 
 	projects: [
 		{
+			title: "Lumina Write - Real-time Collaborative Editor",
+			description:
+				"A Google Docs-style collaborative writing platform built during the HCL GUVI Hackathon 2026. It supports live document editing, workspace previews, role-based access, and real-time collaboration patterns.",
+			linkText: "View Snapshots",
+			link: "/achievements",
+			techStack: [
+				{ name: "React", icon: "react", color: "#61DAFB" },
+				{ name: "Node.js", icon: "nodejs", color: "#339933" },
+				{ name: "MongoDB", icon: "mongodb", color: "#47A248" },
+				{ name: "Tailwind CSS", icon: "tailwind", color: "#06B6D4" },
+				{ name: "JavaScript", icon: "javascript", color: "#F7DF1E" }
+			],
+			problemSolved: "Enables multiple users to collaborate on documents in real time with structured access control, helping teams write, review, and manage content in one shared workspace.",
+			features: ["Real-Time Editing", "Live Collaboration", "Workspace Preview", "Role-Based Access", "Document Management", "Responsive Interface", "Hackathon-Winning Product"]
+		},
+		{
+			title: "ATH Sales Intelligence Platform",
+			description:
+				"An AI-powered sales intelligence dashboard and ticket repository experience built for business teams to inspect performance, organize customer signals, and work from actionable sales data.",
+			linkText: "View Snapshots",
+			link: "/achievements",
+			techStack: [
+				{ name: "React", icon: "react", color: "#61DAFB" },
+				{ name: "JavaScript", icon: "javascript", color: "#F7DF1E" },
+				{ name: "Tailwind CSS", icon: "tailwind", color: "#06B6D4" },
+				{ name: "Node.js", icon: "nodejs", color: "#339933" },
+				{ name: "MongoDB", icon: "mongodb", color: "#47A248" }
+			],
+			problemSolved: "Helps sales teams convert scattered performance and ticket data into a clearer operational view for tracking, prioritization, and decision-making.",
+			features: ["Sales Dashboard", "Ticket Repository", "AI-Powered Insights", "Performance Tracking", "Business Workflow UI", "Responsive Data Views", "Frontend Delivery"]
+		},
+		{
 			title: "Core Banking System (Next.js + Spring Boot)",
 			description:
 				"A secure, multi-tier digital banking platform for customer onboarding, account management, and claims processing. Features JWT Authentication, RBAC, and a responsive dashboard.",
