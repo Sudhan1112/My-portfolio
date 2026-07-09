@@ -236,6 +236,107 @@
 	color: var(--primary-color) !important;
 }
 
+.about-experience-list {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+}
+
+.about-experience-list::before {
+	content: "";
+	position: absolute;
+	left: 9px;
+	top: 12px;
+	bottom: 12px;
+	width: 2px;
+	background: linear-gradient(
+		180deg,
+		var(--link-color),
+		color-mix(in hsl, var(--border-color) 82%, transparent)
+	);
+}
+
+.about-experience-card {
+	position: relative;
+	display: grid;
+	grid-template-columns: 20px minmax(0, 1fr);
+	gap: 14px;
+	align-items: start;
+	border-radius: 14px;
+	border: 1px solid var(--border-color);
+	background: var(--secondary-background);
+	padding: 16px 18px 16px 0;
+	transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-experience-card:hover {
+	transform: translateY(-2px);
+	border-color: color-mix(in hsl, var(--link-color) 45%, var(--border-color));
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.about-experience-marker {
+	position: relative;
+	z-index: 1;
+	width: 12px;
+	height: 12px;
+	margin: 6px 0 0 4px;
+	border-radius: 50%;
+	background: var(--link-color);
+	box-shadow: 0 0 0 5px color-mix(in hsl, var(--link-color) 18%, var(--background));
+}
+
+.about-experience-content {
+	min-width: 0;
+}
+
+.about-experience-topline {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-bottom: 6px;
+}
+
+.about-experience-duration {
+	display: inline-flex;
+	align-items: center;
+	width: fit-content;
+	border-radius: 999px;
+	border: 1px solid color-mix(in hsl, var(--link-color) 40%, var(--border-color));
+	background: color-mix(in hsl, var(--link-color) 10%, var(--background));
+	color: var(--link-color);
+	padding: 4px 9px;
+	font-size: 0.72rem;
+	font-weight: 800;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	line-height: 1.2;
+}
+
+.about-experience-role {
+	margin: 0 0 5px;
+	color: var(--primary-color);
+	font-size: 1rem;
+	font-weight: 700;
+	line-height: 1.35;
+}
+
+.about-experience-company {
+	margin: 0 0 8px;
+	color: var(--link-color);
+	font-size: 0.9rem;
+	font-weight: 700;
+	line-height: 1.4;
+}
+
+.about-experience-detail {
+	margin: 0;
+	color: var(--secondary-color);
+	font-size: 0.92rem;
+	line-height: 1.55;
+}
+
 .about-do-list {
 	list-style: none;
 	margin: 0;
@@ -360,6 +461,15 @@
 
 	.about-section-card {
 		padding: 16px;
+	}
+
+	.about-experience-card {
+		padding: 14px 14px 14px 0;
+		gap: 12px;
+	}
+
+	.about-experience-role {
+		font-size: 0.96rem;
 	}
 
 	.about-profile-card {
