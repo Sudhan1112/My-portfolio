@@ -329,7 +329,7 @@ const Achievements = () => {
 							<div className="timeline">
 								{HACKATHONS.map((item, idx) => (
 									<div
-										className={`timeline-item ${visibleItems.has(idx) ? "animate-in" : ""}`}
+										className={`timeline-item ${item.featured ? "timeline-item--featured" : ""} ${visibleItems.has(idx) ? "animate-in" : ""}`}
 										key={item.title}
 										data-index={idx}
 										ref={(el) => {
@@ -338,13 +338,32 @@ const Achievements = () => {
 										style={{ animationDelay: `${idx * 0.08}s` }}
 									>
 										<div className="timeline-dot" />
-										<div className="timeline-card">
+										<div className={`timeline-card ${item.featured ? "timeline-card--winner" : ""}`}>
 											<div className="timeline-meta">
 												<span className="timeline-year">{item.year}</span>
 												<span className="timeline-badge">{item.badge}</span>
 											</div>
 											<div className="timeline-title">{item.title}</div>
+											{item.result && (
+												<div className="timeline-result">{item.result}</div>
+											)}
 											<div className="timeline-desc">{item.desc}</div>
+											{item.venue && (
+												<p className="timeline-venue">
+													Venue:{" "}
+													{item.venueUrl ? (
+														<a
+															href={item.venueUrl}
+															target="_blank"
+															rel="noreferrer"
+														>
+															{item.venue}
+														</a>
+													) : (
+														item.venue
+													)}
+												</p>
+											)}
 										</div>
 									</div>
 								))}

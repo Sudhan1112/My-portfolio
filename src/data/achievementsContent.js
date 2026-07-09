@@ -26,20 +26,30 @@ export const ACHIEVEMENT_IMAGE_FILES = {
 export const HACKATHONS = [
 	{
 		year: "2026",
-		badge: "Hackathon",
-		title: "HCL GUVI Hackathon 2026",
-		desc: "Built an industry-standard SaaS product within 4 days in a high-intensity development environment (live demo).",
+		badge: "Winner",
+		title: "HCL GUVI Hackathon 2026 - 1st Place",
+		result: "Top Performer",
+		featured: true,
+		desc: "Won the HCL GUVI Hackathon as the top performer after building an industry-standard SaaS product within 4 days in a high-intensity development environment.",
+	},
+	{
+		year: "2026",
+		badge: "Participant",
+		title: "Buildbridge Hackathon 2026",
+		venue: "Chennai Institute of Technology",
+		venueUrl: "https://en.wikipedia.org/wiki/Chennai_Institute_of_Technology",
+		desc: "Participated in the Buildbridge Hackathon 2026 at Chennai Institute of Technology, collaborating in a competitive product-building environment.",
 	},
 	{
 		year: "2025",
 		badge: "Leadership",
-		title: "Team Lead – SquadFusion Hackathon (Kalvium)",
+		title: "Team Lead - SquadFusion Hackathon (Kalvium)",
 		desc: "Led team coordination, task distribution, and final project delivery.",
 	},
 	{
 		year: "2024",
 		badge: "National",
-		title: "Participant – Smart India Hackathon 2024",
+		title: "Participant - Smart India Hackathon 2024",
 		desc: "Contributed to full-stack development in an agile team setting.",
 	},
 ];

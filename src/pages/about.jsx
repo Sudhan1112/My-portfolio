@@ -19,6 +19,23 @@ const WHAT_I_DO = [
 	"Polish UI with Tailwind CSS and responsive layouts",
 ];
 
+const EXPERIENCE = [
+	{
+		role: "Development Intern",
+		company: "HCL GUVI",
+		duration: "2 months",
+		detail:
+			"Completed a focused development internship, contributing to practical software-building workflows and sharpening production-oriented execution.",
+	},
+	{
+		role: "Senior Software Lead",
+		company: "Supernetrix",
+		duration: "1.3 years",
+		detail:
+			"Led software delivery responsibilities across planning, implementation, and team coordination in a completed senior lead role.",
+	},
+];
+
 const SKILL_GROUPS = [
 	{
 		title: "System design",
@@ -104,7 +121,7 @@ const About = () => {
 						<p className="about-hero-kicker">About</p>
 						<h1 className="about-hero-title">{INFO.about.title}</h1>
 						<p className="about-hero-lead">
-							Focused on fast, secure, and scalable systems — from API design to polished UI.
+							Focused on fast, secure, and scalable systems - from API design to polished UI.
 						</p>
 					</header>
 
@@ -141,6 +158,27 @@ const About = () => {
 								</div>
 							</section>
 
+							<section className="about-section-card" aria-labelledby="experience-heading">
+								<h2 id="experience-heading" className="about-section-title">
+									Experience
+								</h2>
+								<div className="about-experience-list">
+									{EXPERIENCE.map((item) => (
+										<article key={`${item.role}-${item.company}`} className="about-experience-card">
+											<div className="about-experience-marker" aria-hidden />
+											<div className="about-experience-content">
+												<div className="about-experience-topline">
+													<span className="about-experience-duration">{item.duration}</span>
+												</div>
+												<h3 className="about-experience-role">{item.role}</h3>
+												<p className="about-experience-company">{item.company}</p>
+												<p className="about-experience-detail">{item.detail}</p>
+											</div>
+										</article>
+									))}
+								</div>
+							</section>
+
 							<section className="about-section-card" aria-labelledby="what-heading">
 								<h2 id="what-heading" className="about-section-title">
 									What I do
@@ -171,7 +209,7 @@ const About = () => {
 									Technical skills
 								</h2>
 								<p className="about-section-lead">
-									Grouped by area — tap-friendly chips on small screens.
+									Grouped by area - tap-friendly chips on small screens.
 								</p>
 								<div className="about-skill-grid">
 									{SKILL_GROUPS.map((group) => (
