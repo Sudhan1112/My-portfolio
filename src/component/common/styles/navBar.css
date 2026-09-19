@@ -17,11 +17,51 @@
 	align-items: center;
 	position: fixed;
 	top: 20px;
-	left: 50%;
-	transform: translateX(-50%);
+	left: 0;
+	right: 0;
+	transform: none;
 	z-index: 999;
-	width: auto;
+	width: 100%;
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 0 16px;
+	box-sizing: border-box;
 	pointer-events: none;
+}
+
+/* Avatar sits with the navbar, left of the centered pill */
+.nav-logo {
+	position: absolute;
+	left: 16px;
+	top: 50%;
+	transform: translateY(-50%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 42px;
+	height: 42px;
+	border: 1px solid var(--border-color);
+	border-radius: 50%;
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+	background: var(--background);
+	overflow: hidden;
+	pointer-events: auto;
+	z-index: 1;
+	flex-shrink: 0;
+}
+
+.nav-logo .logo,
+.nav-logo img {
+	width: 42px;
+	height: 42px;
+	object-fit: cover;
+	border-radius: 50%;
+	display: block;
+}
+
+.nav-logo a {
+	display: flex;
+	line-height: 0;
 }
 
 /* ========================================
@@ -30,6 +70,7 @@
 .desktop-nav {
 	display: block;
 	pointer-events: auto;
+	margin: 0 auto;
 }
 
 .nav-background {
@@ -254,6 +295,12 @@
 /* ========================================
    RESPONSIVE BREAKPOINTS
    ======================================== */
+@media (max-width: 1270px) {
+	.navbar {
+		max-width: 90%;
+	}
+}
+
 @media (max-width: 768px) {
 	.nav-background {
 		width: 440px;
@@ -265,11 +312,22 @@
 	.nav-item {
 		font-size: 84%;
 	}
+	.nav-logo {
+		left: 8px;
+		width: 38px;
+		height: 38px;
+	}
+	.nav-logo .logo,
+	.nav-logo img {
+		width: 38px;
+		height: 38px;
+	}
 }
 
 /* Switch to bottom tab bar at 600px */
 @media (max-width: 600px) {
-	.desktop-nav {
+	.desktop-nav,
+	.desktop-nav-logo {
 		display: none;
 	}
 	.mobile-nav {
@@ -279,10 +337,13 @@
 	.navbar {
 		top: auto;
 		left: auto;
+		right: auto;
 		transform: none;
 		position: static;
 		width: 0;
 		height: 0;
+		max-width: none;
+		padding: 0;
 		overflow: visible;
 	}
 }

@@ -84,11 +84,14 @@ const Homepage = () => {
 	const logoStyle = {
 		display: "flex",
 		position: stayLogo ? "fixed" : "relative",
-		top: stayLogo ? "3vh" : "auto",
+		top: stayLogo ? "20px" : "auto",
+		left: stayLogo ? "max(16px, calc((100vw - min(1000px, 90vw)) / 2 + 16px))" : "auto",
 		zIndex: 999,
 		border: stayLogo ? "1px solid var(--border-color)" : "none",
 		borderRadius: stayLogo ? "50%" : "none",
 		boxShadow: stayLogo ? "0px 4px 10px rgba(0, 0, 0, 0.25)" : "none",
+		background: stayLogo ? "var(--background)" : "transparent",
+		overflow: stayLogo ? "hidden" : "visible",
 	};
 
 	return (
@@ -103,7 +106,7 @@ const Homepage = () => {
 			</Helmet>
 
 			<div className="page-content homepage-page">
-				<NavBar active="home" />
+				<NavBar active="home" showLogo={false} />
 				<div className="content-wrapper">
 					<div className="homepage-logo-container">
 						<div style={logoStyle} className="homepage-logo">

@@ -3,10 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
 import { flushSync } from "react-dom";
 import { Link } from "react-router-dom";
+import Logo from "./Logo";
 import "./styles/navBar.css";
 
 const NavBar = (props) => {
-	const { active } = props;
+	const { active, showLogo = true } = props;
 	const [theme, setTheme] = useState(
 		localStorage.getItem("theme") || "light-theme"
 	);
@@ -24,7 +25,9 @@ const NavBar = (props) => {
 		let x = window.innerWidth / 2;
 		let y = window.innerHeight / 2;
 
-		const logoElement = document.querySelector(".homepage-logo");
+		const logoElement =
+			document.querySelector(".homepage-logo") ||
+			document.querySelector(".nav-logo");
 		if (logoElement) {
 			const rect = logoElement.getBoundingClientRect();
 			x = rect.left + rect.width / 2;
@@ -94,6 +97,12 @@ const NavBar = (props) => {
 		<React.Fragment>
 			<div className="nav-container">
 				<nav className="navbar">
+					{showLogo && (
+						<div className="nav-logo desktop-nav-logo">
+							<Logo width={42} />
+						</div>
+					)}
+
 					{/* Desktop/Tablet Navigation */}
 					<div className="nav-background desktop-nav">
 						<ul className="nav-list">

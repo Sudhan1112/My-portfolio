@@ -46,7 +46,7 @@
 .timeline:before {
 	content: "";
 	position: absolute;
-	left: 12px;
+	left: 5px;
 	top: 0;
 	bottom: 0;
 	width: 2px;
@@ -72,8 +72,7 @@
 	position: relative;
 	margin: 36px 0;
 	opacity: 0;
-	transform: translateX(50px);
-	animation: slideInTimeline 0.6s ease forwards;
+	animation: fadeInTimeline 0.6s ease forwards;
 }
 
 .timeline-item:nth-child(1) {
@@ -88,8 +87,9 @@
 
 .timeline-dot {
 	position: absolute;
-	left: 6px;
-	top: 10px;
+	/* Keep dots on the rail: line center is at 6px; item content starts at 28px */
+	left: -29px;
+	top: 26px;
 	width: 14px;
 	height: 14px;
 	border-radius: 50%;
@@ -98,12 +98,13 @@
 		0 0 0 6px color-mix(in hsl, var(--link-color) 20%, transparent),
 		0 0 20px color-mix(in hsl, var(--link-color) 40%, transparent);
 	z-index: 2;
+	pointer-events: none;
 }
 
 .timeline-item--featured .timeline-dot {
 	background: #f59e0b;
 	box-shadow:
-		0 0 0 7px color-mix(in hsl, #f59e0b 22%, transparent),
+		0 0 0 6px color-mix(in hsl, #f59e0b 22%, transparent),
 		0 0 28px color-mix(in hsl, #f59e0b 52%, transparent);
 }
 
@@ -115,10 +116,21 @@
 	box-shadow:
 		0 8px 32px rgba(0, 0, 0, 0.08),
 		0 2px 6px rgba(0, 0, 0, 0.06);
-	transform: translateX(10px);
-	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	transform: translateX(0);
+	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
 	position: relative;
 	overflow: hidden;
+	animation: slideInCard 0.6s ease forwards;
+}
+
+.timeline-item:nth-child(1) .timeline-card {
+	animation-delay: 0.15s;
+}
+.timeline-item:nth-child(2) .timeline-card {
+	animation-delay: 0.28s;
+}
+.timeline-item:nth-child(3) .timeline-card {
+	animation-delay: 0.4s;
 }
 
 .timeline-card--winner {
@@ -157,7 +169,7 @@
 }
 
 .timeline-card:hover {
-	transform: translateX(12px) translateY(-4px);
+	transform: translateX(4px) translateY(-4px);
 	box-shadow:
 		0 16px 48px rgba(0, 0, 0, 0.12),
 		0 4px 12px rgba(0, 0, 0, 0.08);
@@ -246,29 +258,42 @@
 	text-underline-offset: 3px;
 }
 
-@keyframes slideInTimeline {
+@keyframes fadeInTimeline {
 	from {
 		opacity: 0;
-		transform: translateX(50px);
 	}
 	to {
 		opacity: 1;
-		transform: translateX(10px);
+	}
+}
+
+@keyframes slideInCard {
+	from {
+		opacity: 0;
+		transform: translateX(28px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
 	}
 }
 
 .timeline-item.animate-in {
-	animation: slideInObserver 0.75s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+	animation: fadeInTimeline 0.55s ease forwards;
 }
 
-@keyframes slideInObserver {
+.timeline-item.animate-in .timeline-card {
+	animation: slideInCardObserver 0.75s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideInCardObserver {
 	from {
 		opacity: 0;
-		transform: translateX(48px) translateY(12px);
+		transform: translateX(28px) translateY(12px);
 	}
 	to {
 		opacity: 1;
-		transform: translateX(10px) translateY(0);
+		transform: translateX(0) translateY(0);
 	}
 }
 
@@ -774,15 +799,15 @@
 	}
 
 	.timeline {
-		padding-left: 22px;
+		padding-left: 24px;
 	}
 
 	.timeline:before {
-		left: 8px;
+		left: 5px;
 	}
 
 	.timeline-dot {
-		left: 2px;
+		left: -25px;
 	}
 }
 

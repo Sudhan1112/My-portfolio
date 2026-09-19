@@ -2,7 +2,7 @@ const INFO = {
 	main: {
 		title: "Portfolio by Sudhan",
 		name: "Sudhan.S",
-		email: "sudhanssudhan83@gmail.com",
+		email: "sudhans.dev@gmail.com",
 		/** Edit to your real number (shown on Contact + optional homepage link) */
 		phone: "+91 9952921138",
 		logo: "../logo.png",
@@ -38,7 +38,7 @@ const INFO = {
 		{
 			title: "Lumina Write - Real-time Collaborative Editor",
 			description:
-				"A Google Docs-style collaborative writing platform built during the HCL GUVI Hackathon 2026. It supports live document editing, workspace previews, role-based access, and real-time collaboration patterns.",
+				"A Google Docs-style collaborative writing platform built during the HCL GUVI BuildBridge Hackathon 2026. It supports live document editing, workspace previews, role-based access, and real-time collaboration patterns.",
 			linkText: "View Snapshots",
 			link: "/achievements",
 			techStack: [

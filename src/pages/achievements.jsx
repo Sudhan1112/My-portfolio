@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 import { Helmet } from "react-helmet";
 import NavBar from "../component/common/NavBar";
 import Footer from "../component/common/Footer";
-import Logo from "../component/common/Logo";
 import Modal from "../component/ui/Modal";
 import "../component/projects/styles/project.css";
 import INFO from "../data/User";
@@ -301,12 +300,6 @@ const Achievements = () => {
 			<div className="page-content achievements-page">
 				<NavBar active="achievements" />
 				<div className="content-wrapper">
-					<div className="about-logo-container">
-						<div className="about-logo">
-							<Logo width={46} />
-						</div>
-					</div>
-
 					<div className="achievements-container">
 						<div className="title achievements-title">
 							Achievements & certifications

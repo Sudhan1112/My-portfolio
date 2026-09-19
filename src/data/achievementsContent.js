@@ -26,19 +26,40 @@ export const ACHIEVEMENT_IMAGE_FILES = {
 export const HACKATHONS = [
 	{
 		year: "2026",
+		badge: "Pre-Finals",
+		title: "Smart India Hackathon (SIH) 2026",
+		result: "Selected for Pre-Finals · Ongoing",
+		desc: "Selected for the SIH 2026 pre-finals round and currently competing in the ongoing national hackathon, building a full-stack solution under tight timelines with an agile team.",
+	},
+	{
+		year: "2026",
 		badge: "Winner",
-		title: "HCL GUVI Hackathon 2026 - 1st Place",
+		title: "HCL GUVI BuildBridge Hackathon 2026 - 1st Place",
 		result: "Top Performer",
 		featured: true,
-		desc: "Won the HCL GUVI Hackathon as the top performer after building an industry-standard SaaS product within 4 days in a high-intensity development environment.",
+		desc: "Won the HCL GUVI BuildBridge Hackathon 2026 as the top performer after building an industry-standard SaaS product within 4 days in a high-intensity development environment.",
 	},
 	{
 		year: "2026",
 		badge: "Participant",
-		title: "Buildbridge Hackathon 2026",
+		title: "CIT AI Hackathon 2026",
 		venue: "Chennai Institute of Technology",
 		venueUrl: "https://en.wikipedia.org/wiki/Chennai_Institute_of_Technology",
 		desc: "Participated in the Buildbridge Hackathon 2026 at Chennai Institute of Technology, collaborating in a competitive product-building environment.",
+	},
+	{
+		year: "2026",
+		badge: "Participant",
+		title: "Adobe University Hackathon",
+		result: "Certificate of Participation",
+		desc: "Participated in Round 1 — Online Assessment (MCQ + Coding) of the Adobe University Hackathon, organized by Adobe on Unstop.",
+	},
+	{
+		year: "2026",
+		badge: "Participant",
+		title: "Vibe2Ship — India's Biggest Vibe Coding Hackathon",
+		result: "Certificate of Participation",
+		desc: "Actively participated in Vibe2Ship, organized by Coding Ninjas in collaboration with Google for Developers, building AI-powered solutions in a competitive vibe-coding format.",
 	},
 	{
 		year: "2025",
@@ -99,7 +120,7 @@ export const CERTIFICATIONS = [
 export const WORK_SNAPSHOTS = [
 	{
 		title: "Lumina Write",
-		subtitle: "Real-time collaborative editor · HCL–GUVI 2026",
+		subtitle: "Real-time collaborative editor · HCL GUVI BuildBridge 2026",
 		desc: "Login and workspace preview from the Google Docs–style editor built with CRDT sync, live cursors, and role-based access.",
 		imageKeys: ["lumina", "lumina1", "lumina2", "lumina3", "lumina4", "lumina5", "luminaL"],
 	},

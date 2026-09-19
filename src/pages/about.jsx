@@ -3,7 +3,6 @@ import { Helmet } from "react-helmet";
 
 import NavBar from "../component/common/NavBar";
 import Footer from "../component/common/Footer";
-import Logo from "../component/common/Logo";
 import Socials from "../component/about/social";
 
 import INFO from "../data/User";
@@ -21,18 +20,18 @@ const WHAT_I_DO = [
 
 const EXPERIENCE = [
 	{
+		role: "Full-stack Development Intern",
+		company: "Supernetrix",
+		duration: "Jun 2024 – May 2026",
+		detail:
+			"Gained hands-on experience in the Development & Engineering department at Supernetrix (Technology & AI Solutions), contributing to full-stack delivery across planning, implementation, and shipping production features.",
+	},
+	{
 		role: "Development Intern",
 		company: "HCL GUVI",
 		duration: "2 months",
 		detail:
 			"Completed a focused development internship, contributing to practical software-building workflows and sharpening production-oriented execution.",
-	},
-	{
-		role: "Senior Software Lead",
-		company: "Supernetrix",
-		duration: "1.3 years",
-		detail:
-			"Led software delivery responsibilities across planning, implementation, and team coordination in a completed senior lead role.",
 	},
 ];
 
@@ -111,12 +110,6 @@ const About = () => {
 			<div className="page-content about-page">
 				<NavBar active="about" />
 				<div className="content-wrapper about-page-inner">
-					<div className="about-logo-container">
-						<div className="about-logo">
-							<Logo width={46} />
-						</div>
-					</div>
-
 					<header className="about-hero">
 						<p className="about-hero-kicker">About</p>
 						<h1 className="about-hero-title">{INFO.about.title}</h1>
