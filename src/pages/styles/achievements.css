@@ -38,77 +38,78 @@
 
 /* ----- Timeline (hackathons) ----- */
 .timeline {
+	--timeline-rail: 16px;
+	--timeline-gap: 18px;
 	position: relative;
 	margin: 8px 0 12px 0;
-	padding-left: 28px;
+	padding-left: 0;
 }
 
-.timeline:before {
+/* Vertical rail — centered in the rail column */
+.timeline::before {
 	content: "";
 	position: absolute;
-	left: 5px;
-	top: 0;
-	bottom: 0;
+	left: calc(var(--timeline-rail) / 2);
+	top: 8px;
+	bottom: 8px;
 	width: 2px;
+	transform: translateX(-50%);
 	background: linear-gradient(
 		180deg,
 		var(--link-color) 0%,
 		var(--border-color) 100%
 	);
-	animation: drawLine 2s ease-in-out forwards;
-	transform-origin: top;
-}
-
-@keyframes drawLine {
-	from {
-		transform: scaleY(0);
-	}
-	to {
-		transform: scaleY(1);
-	}
+	z-index: 0;
 }
 
 .timeline-item {
 	position: relative;
-	margin: 36px 0;
+	display: grid;
+	grid-template-columns: var(--timeline-rail) minmax(0, 1fr);
+	column-gap: var(--timeline-gap);
+	align-items: start;
+	margin: 28px 0;
 	opacity: 0;
-	animation: fadeInTimeline 0.6s ease forwards;
+	animation: fadeInTimeline 0.55s ease forwards;
+	z-index: 1;
 }
 
 .timeline-item:nth-child(1) {
-	animation-delay: 0.15s;
+	animation-delay: 0.12s;
 }
 .timeline-item:nth-child(2) {
-	animation-delay: 0.28s;
+	animation-delay: 0.2s;
 }
 .timeline-item:nth-child(3) {
-	animation-delay: 0.4s;
+	animation-delay: 0.28s;
 }
 
 .timeline-dot {
-	position: absolute;
-	/* Keep dots on the rail: line center is at 6px; item content starts at 28px */
-	left: -29px;
-	top: 26px;
-	width: 14px;
-	height: 14px;
+	position: relative;
+	left: auto;
+	top: 28px;
+	width: 12px;
+	height: 12px;
+	margin: 0 auto;
 	border-radius: 50%;
 	background: var(--link-color);
 	box-shadow:
-		0 0 0 6px color-mix(in hsl, var(--link-color) 20%, transparent),
-		0 0 20px color-mix(in hsl, var(--link-color) 40%, transparent);
+		0 0 0 5px color-mix(in hsl, var(--link-color) 18%, var(--background));
 	z-index: 2;
 	pointer-events: none;
+	grid-column: 1;
+	justify-self: center;
 }
 
 .timeline-item--featured .timeline-dot {
 	background: #f59e0b;
 	box-shadow:
-		0 0 0 6px color-mix(in hsl, #f59e0b 22%, transparent),
-		0 0 28px color-mix(in hsl, #f59e0b 52%, transparent);
+		0 0 0 5px color-mix(in hsl, #f59e0b 20%, var(--background));
 }
 
 .timeline-card {
+	grid-column: 2;
+	min-width: 0;
 	background: var(--background);
 	border: 1px solid var(--border-color);
 	border-radius: 16px;
@@ -116,51 +117,56 @@
 	box-shadow:
 		0 8px 32px rgba(0, 0, 0, 0.08),
 		0 2px 6px rgba(0, 0, 0, 0.06);
-	transform: translateX(0);
+	transform: none;
 	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
 	position: relative;
-	overflow: hidden;
-	animation: slideInCard 0.6s ease forwards;
+	overflow: visible;
+	animation: fadeUpCard 0.55s ease forwards;
 }
 
 .timeline-item:nth-child(1) .timeline-card {
-	animation-delay: 0.15s;
+	animation-delay: 0.12s;
 }
 .timeline-item:nth-child(2) .timeline-card {
-	animation-delay: 0.28s;
+	animation-delay: 0.2s;
 }
 .timeline-item:nth-child(3) .timeline-card {
-	animation-delay: 0.4s;
+	animation-delay: 0.28s;
 }
 
 .timeline-card--winner {
-	border-color: color-mix(in hsl, #f59e0b 58%, var(--border-color));
+	border-color: color-mix(in hsl, #f59e0b 50%, var(--border-color));
 	background:
 		linear-gradient(
 			135deg,
-			color-mix(in hsl, #f59e0b 13%, var(--background)) 0%,
+			color-mix(in hsl, #f59e0b 10%, var(--background)) 0%,
 			var(--background) 48%,
-			color-mix(in hsl, var(--link-color) 8%, var(--background)) 100%
+			color-mix(in hsl, var(--link-color) 6%, var(--background)) 100%
 		);
 	box-shadow:
-		0 22px 56px color-mix(in hsl, #f59e0b 16%, transparent),
-		0 8px 28px rgba(0, 0, 0, 0.08);
+		0 14px 40px color-mix(in hsl, #f59e0b 12%, transparent),
+		0 6px 20px rgba(0, 0, 0, 0.06);
 }
 
 .timeline-card--winner::before {
 	content: "Achievement unlocked";
 	position: absolute;
-	top: 16px;
-	right: 18px;
-	font-size: 0.68rem;
+	top: 14px;
+	right: 14px;
+	font-size: 0.65rem;
 	font-weight: 800;
-	letter-spacing: 0.08em;
+	letter-spacing: 0.06em;
 	text-transform: uppercase;
 	color: #92400e;
 	background: color-mix(in hsl, #f59e0b 18%, var(--background));
 	border: 1px solid color-mix(in hsl, #f59e0b 48%, var(--border-color));
 	border-radius: 999px;
-	padding: 5px 10px;
+	padding: 4px 9px;
+	z-index: 1;
+	max-width: calc(100% - 28px);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .dark-theme .timeline-card--winner::before {
@@ -169,11 +175,15 @@
 }
 
 .timeline-card:hover {
-	transform: translateX(4px) translateY(-4px);
+	transform: translateY(-3px);
 	box-shadow:
 		0 16px 48px rgba(0, 0, 0, 0.12),
 		0 4px 12px rgba(0, 0, 0, 0.08);
 	border-color: color-mix(in hsl, var(--link-color) 45%, var(--border-color));
+}
+
+.timeline-card--winner .timeline-meta {
+	padding-right: 140px;
 }
 
 .timeline-meta {
@@ -267,34 +277,23 @@
 	}
 }
 
-@keyframes slideInCard {
+@keyframes fadeUpCard {
 	from {
 		opacity: 0;
-		transform: translateX(28px);
+		transform: translateY(12px);
 	}
 	to {
 		opacity: 1;
-		transform: translateX(0);
+		transform: translateY(0);
 	}
 }
 
 .timeline-item.animate-in {
-	animation: fadeInTimeline 0.55s ease forwards;
+	animation: fadeInTimeline 0.5s ease forwards;
 }
 
 .timeline-item.animate-in .timeline-card {
-	animation: slideInCardObserver 0.75s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-
-@keyframes slideInCardObserver {
-	from {
-		opacity: 0;
-		transform: translateX(28px) translateY(12px);
-	}
-	to {
-		opacity: 1;
-		transform: translateX(0) translateY(0);
-	}
+	animation: fadeUpCard 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 /* ----- Recognition spotlight ----- */
@@ -799,15 +798,23 @@
 	}
 
 	.timeline {
-		padding-left: 24px;
+		--timeline-rail: 14px;
+		--timeline-gap: 14px;
+		padding-left: 0;
 	}
 
-	.timeline:before {
-		left: 5px;
+	.timeline::before {
+		left: calc(var(--timeline-rail) / 2);
 	}
 
 	.timeline-dot {
-		left: -25px;
+		left: auto;
+		width: 11px;
+		height: 11px;
+	}
+
+	.timeline-card--winner .timeline-meta {
+		padding-right: 0;
 	}
 }
 
