@@ -29,9 +29,9 @@ const EXPERIENCE = [
 	{
 		role: "Development Intern",
 		company: "HCL GUVI",
-		duration: "2 months",
+		duration: "Ongoing",
 		detail:
-			"Completed a focused development internship, contributing to practical software-building workflows and sharpening production-oriented execution.",
+			"Completing a focused development internship, contributing to practical software-building workflows and sharpening production-oriented execution.",
 	},
 ];
 
